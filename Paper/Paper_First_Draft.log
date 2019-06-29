@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  29 JUN 2019 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  29 JUN 2019 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,12 +520,6 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-[1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-]
 LaTeX Font Info:    Try loading font information for U+msa on input line 46.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -565,91 +559,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[2
+[1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
+<RMFSSD.png, id=11, 647.0574pt x 278.9622pt>
+File: RMFSSD.png Graphic file (type png)
+<use RMFSSD.png>
+Package pdftex.def Info: RMFSSD.png  used on input line 94.
+(pdftex.def)             Requested size: 252.0pt x 108.64157pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 
-Underfull \hbox (badness 3250) in paragraph at lines 104--105
-[]\OT1/ptm/m/n/10 As shown in \OT1/ptm/b/n/10 Fig-ure \OT1/ptm/m/n/10 the fi-na
-l model uses LSTMs
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
+<images/Liu_Zhu.png, id=13, 710.655pt x 219.7008pt>
+File: images/Liu_Zhu.png Graphic file (type png)
+<use images/Liu_Zhu.png>
+Package pdftex.def Info: images/Liu_Zhu.png  used on input line 110.
+(pdftex.def)             Requested size: 252.0pt x 77.90549pt.
 <images/KB-RANN-architecture.png, id=14, 1016.79875pt x 379.4175pt>
 File: images/KB-RANN-architecture.png Graphic file (type png)
 <use images/KB-RANN-architecture.png>
-Package pdftex.def Info: images/KB-RANN-architecture.png  used on input line 10
-9.
+Package pdftex.def Info: images/KB-RANN-architecture.png  used on input line 11
+7.
 (pdftex.def)             Requested size: 252.0pt x 94.03203pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 109--111
+Overfull \hbox (10.0pt too wide) in paragraph at lines 117--119
 [][] 
  []
 
-<images/looking-fast-and-slow-architecture.png, id=16, 812.03375pt x 327.2225pt
+[2 <./RMFSSD.png> <./images/Liu_Zhu.png> <./images/KB-RANN-architecture.png>]
+<images/looking-fast-and-slow-architecture.png, id=24, 812.03375pt x 327.2225pt
 >
 File: images/looking-fast-and-slow-architecture.png Graphic file (type png)
 <use images/looking-fast-and-slow-architecture.png>
 Package pdftex.def Info: images/looking-fast-and-slow-architecture.png  used on
- input line 126.
+ input line 134.
 (pdftex.def)             Requested size: 252.0pt x 101.54277pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 126--128
+Overfull \hbox (10.0pt too wide) in paragraph at lines 134--136
 [][] 
  []
 
-[3 <./images/KB-RANN-architecture.png> <./images/looking-fast-and-slow-architec
-ture.png>]
 <images/D&T-architecture.png, id=25, 1114.1625pt x 465.74pt>
 File: images/D&T-architecture.png Graphic file (type png)
 <use images/D&T-architecture.png>
-Package pdftex.def Info: images/D&T-architecture.png  used on input line 142.
+Package pdftex.def Info: images/D&T-architecture.png  used on input line 150.
 (pdftex.def)             Requested size: 252.0pt x 105.33418pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 142--144
+Overfull \hbox (10.0pt too wide) in paragraph at lines 150--152
 [][] 
  []
 
 <images/box-level-basic.png, id=26, 931.48pt x 275.0275pt>
 File: images/box-level-basic.png Graphic file (type png)
 <use images/box-level-basic.png>
-Package pdftex.def Info: images/box-level-basic.png  used on input line 155.
+Package pdftex.def Info: images/box-level-basic.png  used on input line 163.
 (pdftex.def)             Requested size: 252.0pt x 74.40529pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 155--157
+Overfull \hbox (10.0pt too wide) in paragraph at lines 163--165
 [][]
  []
 
@@ -657,48 +645,29 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 155--157
 File: images/video-tubelets-architecture.png Graphic file (type png)
 <use images/video-tubelets-architecture.png>
 Package pdftex.def Info: images/video-tubelets-architecture.png  used on input 
-line 159.
+line 167.
 (pdftex.def)             Requested size: 252.0pt x 41.26868pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 159--161
+Overfull \hbox (10.0pt too wide) in paragraph at lines 167--169
 [][] 
  []
 
 <images/scale-time-lattice.png, id=28, 1115.16624pt x 377.41pt>
 File: images/scale-time-lattice.png Graphic file (type png)
 <use images/scale-time-lattice.png>
-Package pdftex.def Info: images/scale-time-lattice.png  used on input line 173.
+Package pdftex.def Info: images/scale-time-lattice.png  used on input line 181.
 
 (pdftex.def)             Requested size: 252.0pt x 85.28214pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 173--175
+Overfull \hbox (10.0pt too wide) in paragraph at lines 181--183
 [][] 
  []
 
-
-Underfull \hbox (badness 1533) in paragraph at lines 187--188
-\OT1/ptm/m/n/10 ar-chi-tec-ture con-sists two parts: A pseudo-labeler, which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
-
- []
-
-[4 <./images/D&T-architecture.png> <./images/box-level-basic.png> <./images/vid
-eo-tubelets-architecture.png> <./images/scale-time-lattice.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-
+[3 <./images/looking-fast-and-slow-architecture.png> <./images/D&T-architecture
+.png> <./images/box-level-basic.png> <./images/video-tubelets-architecture.png>
+ <./images/scale-time-lattice.png>]
+Underfull \hbox (badness 2181) in paragraph at lines 195--196
+\OT1/ptm/m/n/10 Their ar-chi-tec-ture con-sists two parts: A pseudo-labeler,
  []
 
 
@@ -706,231 +675,252 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 207.
+<images/ContextMatters.png, id=37, 539.616pt x 200.4288pt>
+File: images/ContextMatters.png Graphic file (type png)
+<use images/ContextMatters.png>
+Package pdftex.def Info: images/ContextMatters.png  used on input line 200.
+(pdftex.def)             Requested size: 252.0pt x 93.59906pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 220.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 220.
+<images/ROLO.png, id=38, 540.5796pt x 211.5102pt>
+File: images/ROLO.png Graphic file (type png)
+<use images/ROLO.png>
+Package pdftex.def Info: images/ROLO.png  used on input line 232.
+(pdftex.def)             Requested size: 252.0pt x 98.5965pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
+
+ []
+
+[4 <./images/ContextMatters.png> <./images/ROLO.png>]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 240.
+(caption)                outside box or environment on input line 258.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 243--243
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 261--261
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--245
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/ptm/m/n/10 Feature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 254--254
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 272--272
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--256
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--260
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []\OT1/ptm/m/n/10 Scale-Time
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--260
+Underfull \hbox (badness 10000) in paragraph at lines 278--278
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
 []\OT1/ptm/m/n/10 Scale-Time
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 280--280
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--264
+Underfull \hbox (badness 10000) in paragraph at lines 282--282
 []\OT1/ptm/m/n/10 DeepFeature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--266
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []\OT1/ptm/m/n/10 DeepFeature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--268
+Underfull \hbox (badness 10000) in paragraph at lines 286--286
 []\OT1/ptm/m/n/10 Pixel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 []\OT1/ptm/m/n/10 Object
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 \OT1/ptm/m/n/10 De-tec-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 \OT1/ptm/m/n/10 with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 \OT1/ptm/m/n/10 Temporally-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
 []\OT1/ptm/m/n/10 Pixel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--271
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 277--277
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 295--295
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
+Underfull \hbox (badness 10000) in paragraph at lines 297--297
 []\OT1/ptm/m/n/10 Feature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--279
+Underfull \hbox (badness 10000) in paragraph at lines 297--297
 []\OT1/ptm/m/n/10 Nvidia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
-[]\OT1/ptm/m/n/10 Feature-
- []
-
-[5]
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 286--286
-[]\OT1/ptm/m/n/10 MAP| 
- []
-
-
-Overfull \hbox (2.5pt too wide) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 68.73| 
- []
-
-
-Overfull \hbox (1.65955pt too wide) in paragraph at lines 295--295
-[]\OT1/ptm/m/n/10 Success
- []
-
-
-Underfull \hbox (badness 1831) in paragraph at lines 297--297
-[]\OT1/ptm/m/n/10 Spatially Su-
- []
-
-
-Overfull \hbox (2.5pt too wide) in paragraph at lines 297--297
-[]\OT1/ptm/m/n/10 0.455| 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 297--298
+[]\OT1/ptm/m/n/10 Feature-
+ []
+
+
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 304--304
+[]\OT1/ptm/m/n/10 MAP| 
+ []
+
+
+Overfull \hbox (2.5pt too wide) in paragraph at lines 306--306
+[]\OT1/ptm/m/n/10 68.73| 
+ []
+
+
+Overfull \hbox (1.65955pt too wide) in paragraph at lines 313--313
+[]\OT1/ptm/m/n/10 Success
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 315--315
+[]\OT1/ptm/m/n/10 Spatially Su-
+ []
+
+
+Overfull \hbox (2.5pt too wide) in paragraph at lines 315--315
+[]\OT1/ptm/m/n/10 0.455| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 []\OT1/ptm/m/n/10 Nvidia
  []
 
-<images/otb-challenge-results.jpg, id=40, 959.585pt x 763.85374pt>
+<images/otb-challenge-results.jpg, id=45, 959.585pt x 763.85374pt>
 File: images/otb-challenge-results.jpg Graphic file (type jpg)
 <use images/otb-challenge-results.jpg>
 Package pdftex.def Info: images/otb-challenge-results.jpg  used on input line 3
-00.
+18.
 (pdftex.def)             Requested size: 252.0pt x 200.59036pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--301
+Underfull \hbox (badness 10000) in paragraph at lines 311--319
 [][]
  []
 
-
-Underfull \hbox (badness 3168) in paragraph at lines 349--350
+[5 <./images/otb-challenge-results.jpg>]
+Underfull \hbox (badness 3168) in paragraph at lines 367--368
 []\OT1/ptm/m/n/8 Mason Liu, Men-g-long Zhu, Marie White, Yinx-iao Li, Dmitry
  []
 
@@ -945,30 +935,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6 <./images/otb-challenge-results.jpg>] (./Paper_First_Draft.aux) ) 
+[6
+
+] (./Paper_First_Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 5539 strings out of 492616
- 85130 string characters out of 6129481
- 165146 words of memory out of 5000000
- 9382 multiletter control sequences out of 15000+600000
+ 5562 strings out of 492616
+ 85556 string characters out of 6129481
+ 174150 words of memory out of 5000000
+ 9401 multiletter control sequences out of 15000+600000
  36124 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,39p,973b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local
-/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on Paper_First_Draft.pdf (6 pages, 727242 bytes).
+ 41i,8n,39p,973b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvip
+s/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Paper_First_Draft.pdf (6 pages, 958014 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
+ 82 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
