@@ -1,23 +1,26 @@
 \documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
+%\IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\graphicspath{ {images/} }
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{caption}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
 \title{Recurrent Neural Networks for object detection}
 
+<<<<<<< HEAD
 \author{\IEEEauthorblockN{Bin Qassim Ahmad}
 \IEEEauthorblockA{\textit{Technical University of Munich} \\
 \textit{Department of Informatics}\\
 Munich, Germany \\
-email address}
+ahmad.qasim@tum.de }
 \and
 \IEEEauthorblockN{Pettirsch Arnd}
 \IEEEauthorblockA{\textit{Technical University of Munich} \\
@@ -39,7 +42,27 @@ TBD.
 \section{Introduction}
 
 \subsection{Image and Video Object Detection in general}
-ToDo
+\begin{itemize}
+	\item Image object detection history.
+	\begin{itemize}
+		\item Bayesian methods before deep learning
+		\item ImageNet challenge and VID [15]
+		\item Deep Learning and AlexNet [16]
+	\end{itemize}
+	\item Single stage and 2-stage image object detectors.
+	\begin{itemize}
+		\item A two-stage pipeline firstly generates region proposals, which are then classified and refined. [17]
+		\item A single-stage method is often more efficient but less accurate. Directly regress on bounding boxes and classes. [18], [19]
+	\end{itemize}
+	\item Why is video object detection harder?
+	\begin{itemize}
+		\item Large size
+		\item Motion blur
+		\item Quality of the dataset
+		\item Partial occlusion
+		\item Unconventional Poses
+	\end{itemize}
+\end{itemize}
 
 \subsection{Recurrent Neural Networks in general}
 \subsubsection{Delimitation to non-recurrent Neural Networks} 
@@ -83,27 +106,82 @@ As shown in \textbf{Figure} the final model uses LSTMs after all feature maps, b
 On the training strategy and the loss function Liu and Zhu do not provide any information.
 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
-ToDo
+\includegraphics[width=\columnwidth]{KB-RANN-architecture}
+\begin{itemize}
+	\item Compute feature maps using a modified SqueezeNet architecture.
+	\item Propagate the features through a Recurrent Attentive Neural Network, comprised of:
+	\begin{itemize}
+		\item Attention Mechanism to detect key areas within the feature maps.
+		\item Convolutional LSTM for temporal feature propagation.	
+	\end{itemize}
+	\item Reverse gaussian feature maps are combined with the maps obtained from Conv. LSTM.
+	\begin{itemize}
+		\item These feature maps are based on learnable mean and covariance terms.
+		\item This prior knowledge is derived from the assumption that traffic signs are always located at the bias of the center.
+
+	\end{itemize}
+\end{itemize}
 
 \subsection{Looking fast and slow: memory-guided mobile video object detection}
-Todo
-
-\subsection{Delving Deeper into Convolutional Networks for Learning Video Represenations}
-ToDo
+\includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
+\begin{itemize}
+	\item Run multiple feature extractors sequentially or concurrently to obtain feature maps.
+	\begin{itemize}
+		\item 	The idea is to use small and large feature extractors to optimize performance.
+	\end{itemize}
+	\item Aggregate and refine these feature maps using convolutional LSTM based memory network.
+	\begin{itemize}
+		\item To improve speed of LSTM network, add skip connections and LSTM state groups.
+	\end{itemize}
+	\item Apply SSD-style detection on refined features to obtain classification and bounding boxes.
+	\item Use a reinforcement learning based policy for selection of which feature extractor to run.
+	\item Large and small frame extractors can run in parallel using asynchronous mode.
+\end{itemize}
 
 \subsection{Detect to Track and track to detect}
-ToDo
+\includegraphics[width=\columnwidth]{D&T-architecture}
+\begin{itemize}
+	\item Compute Convolutional feature maps using a Resnet-101 architecture.
+	\item Use a RPN (region proposal network) to find candidate regions in the frame.
+	\item ROI Pooling layer, to classify boxes and refine their coordinates (regression).
+	\item Find correlation features between two frames’ feature maps and do ROI tracking.
+	\item Due to memory constraints, use tracklets, which are class-based optimal paths in video.
+
+\end{itemize}
 
 \section{Box-Level-based Video Object Detection}
 
 \subsection{Definition}
-ToDo
+\includegraphics[width=\columnwidth]{box-level-basic}
+Bounding Boxes and Class probabilities are fed into the network and are refined temporally and/or spatially.
 
 \subsection{Object Detection from Video Tubelets with Convolutional Neural Networks}
-ToDo
+\includegraphics[width=\columnwidth]{video-tubelets-architecture}
+\begin{itemize}
+	\item Use selective search algorithm to generate around 2000 object proposals on each frame.
+	\item Use GoogleNet for feature extraction and then 30 SVMs for 30 VID classes to generate object proposal scores for each object proposal.
+	\item Track high confidence targets bi-directionally.
+	\item Two kinds of Perturbations:
+	\begin{itemize}
+		\item The first method is to generate new boxes around each tubelet box on each frame by randomly perturbing the boundaries of the tubelet box.
+		\item The second perturbation method is to replace each tubelet box with original object detections that have overlaps with the tubelet box beyond a threshold.	
+	\end{itemize}
+	\item Train a class-specific TCN using the tubelet features as input. The inputs are time series including detection scores, tracking scores and anchor offsets. The output values are probabilities whether each tubelet box contains objects of the class
+\end{itemize}
 
 \subsection{Optimizing Video Object Detection via Scale-Time Lattice}
-ToDo
+\includegraphics[width=\columnwidth]{scale-time-lattice}
+\begin{itemize}
+	\item Apply object detection on keyframes extracted adaptively.
+	\begin{itemize}
+		\item The extraction policy is based on number of objects and amount of movement in frames.
+		\item If higher number/movement of objects in frames then higher extraction rate.
+	\end{itemize}
+	\item Propagation and refinement unit, propagates the frames temporally and refines spatially.
+	\item For temporal propagation, use a small network such as resnet-18 to extract box features and a regressor to predict object movement from t to t + T.
+	\item For spatial refinement, use a regressor to refine the bounding boxes over increasing scale.
+
+\end{itemize}
 
 \subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks}
 Tripathi, Lipton, Belongie, Nguyen come up with a neural network architecture for video-based object detection. Their architecture consists two parts: A pseudo-labeler, which assigns labels to all video frames and a recurrent unit which refines those pseudo-labels by using the contextual information. Moreover, they describe a training strategy for their architecture and compare their approach to other models on the YouTube-Objects dataset. \newline
@@ -159,7 +237,67 @@ Special to this architecture is, that LSTM does regression in two folds. There i
 \section{Comparison of different approaches}
 
 \subsection{General}
-ToDo
+\captionof{table}{Results on KITTI Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Recurrent \cite{b1} & 86.0 & 50 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ Feature Selective \cite{b6} & 81.3 & 30.8 & Nvidia TITAN X & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on ImageNet Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ DT \cite{b8} & 82.0 & 7 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ DT \cite{b8} & 78.5 & 55 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ Scale-Time Lattice \cite{b10} & 79.6 & 20 & Nvidia TITAN X & Box-Level \\
+ \hline
+ Scale-Time Lattice \cite{b10} & 79 & 62 & Nvidia TITAN X & Box-Level \\
+ \hline
+ DeepFeature Flow \cite{b3} & 73.9 & 3 & - & Flow-Based \\
+ \hline
+ DeepFeature Flow \cite{b3} & 73.1 & 20.5 & - & Flow-Based \\
+ \hline
+ Looking Fast and Slow \cite{b7} & 60.7 & 48.8 & Pixel Phone & Feature-Level \\
+ \hline
+ Object Detection with Temporally-Aware \cite{b2} & 54.4 & 15 & Pixel Phone & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on COCO Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Feature Selective \cite{b6} & 57.8 & 37.5 & Nvidia TITAN X & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on YT Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Context Matters \cite{b4} & 68.73 & - & - & Box-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on OTB Challenge Dataset} 
+\begin{tabular}{ | p{2cm} | p{3em}| p{2em} | p{4em} | p{4em} | } 
+ \hline
+ Model & Success Rate & IoU & FPS & Machine \\
+ \hline
+ Spatially Supervised \cite{b5} & 0.564 & 0.455 & 20/60 & Nvidia TITAN X \\
+ \hline
+\end{tabular}
+\includegraphics[width=\columnwidth]{otb-challenge-results}
 
 \subsection{Conclusion Perfomance}
 Todo
@@ -202,16 +340,24 @@ For papers published in translation journals, please give the English
 citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b1} Alexander Broad, Michael Jones, Teng-Yok Lee. Recurrent Multi-frame Single Shot Detector for Video Object Detection. 2018.
+\bibitem{b2} Mason Liu, Menglong Zhu. Mobile Video Object Detection with Temporally-Aware Feature Maps. 2018.
+\bibitem{b3} Xizhou Zhu, Yuwen Xiong, Jifeng Dai, Lu Yuan, Yichen Wei. Deep Feature Flow for Video Recognition. 2017.
+\bibitem{b4} Subarna Tripathi, Zachary C. Lipton, Serge Belongie, Truong Nguyen. Context Matters: Refining Object Detection in Video with Recurrent Neural Networks.
+\bibitem{b5} Guanghan Ning, Zhi Zhang, Chen Huang, Zhihai He, Xiaobo Ren, Haohong Wang. Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking. 2016.
+\bibitem{b6} Kai Yi, Zhiqiang Jian, Shitao Chen, Nanning Zheng. Feature Selective Small Object Detection via Knowledge-based Recurrent Attentive Neural Network. 2019.
+\bibitem{b7} Mason Liu, Menglong Zhu, Marie White, Yinxiao Li, Dmitry Kalenichenko. Looking Fast and Slow: Memory-Guided Mobile Video Object Detection. 2019.
+\bibitem{b8} Christoph Feichtenhofer, Axel Pinz, Andrew Zisserman. Detect to Track and Track to Detect. 2017.
+\bibitem{b9} Kai Kang, Wanli Ouyang, Hongsheng Li, Xiaogang Wang. Object Detection from Video Tubelets with Convolutional Neural Networks. 2016.
+\bibitem{b10} Kai Chen, Jiaqi Wang, Shuo Yang, Xingcheng Zhang, Yuanjun Xiong, Chen Change Loy, Dahua Lin. Optimizing Video Object Detection via a Scale-Time Lattice. 2018.
+\bibitem{b11} Ian Goodfellow, Yoshua Bengio, Aaron Courville. Deep Learning (Adaptive Computation and Machine Learning). 2017.
+\bibitem{b12} Alexander Broad, Michael Jones, Teng-Yok Lee. Supplementary Material for Recurrent Multi-frame Single Shot Detector for Video Object Detection. 2018.
+\bibitem{b13} Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li and Li Fei-Fei. ImageNet: A Large-Scale Hierarchical Image Database. 
+\bibitem{b14} Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks. 2012.
+\bibitem{b15} Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. 2016. 
+\bibitem{b16} Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement.
+\bibitem{b17} Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, Alexander C. Berg. SSD: Single Shot MultiBox Detector. 2016.
 \end{thebibliography}
 \vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
