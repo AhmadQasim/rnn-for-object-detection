@@ -8,6 +8,7 @@
 \graphicspath{ {images/} }
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{caption}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -173,7 +174,67 @@ Todo
 \section{Comparison of different approaches}
 
 \subsection{General}
-ToDo
+\captionof{table}{Results on KITTI Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Recurrent \cite{b1} & 86.0 & 50 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ Feature Selective \cite{b6} & 81.3 & 30.8 & Nvidia TITAN X & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on ImageNet Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ DT \cite{b8} & 82.0 & 7 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ DT \cite{b8} & 78.5 & 55 & Nvidia TITAN X & Feature-Level \\
+ \hline
+ Scale-Time Lattice \cite{b10} & 79.6 & 20 & Nvidia TITAN X & Box-Level \\
+ \hline
+ Scale-Time Lattice \cite{b10} & 79 & 62 & Nvidia TITAN X & Box-Level \\
+ \hline
+ DeepFeature Flow \cite{b3} & 73.9 & 3 & - & Flow-Based \\
+ \hline
+ DeepFeature Flow \cite{b3} & 73.1 & 20.5 & - & Flow-Based \\
+ \hline
+ Looking Fast and Slow \cite{b7} & 60.7 & 48.8 & Pixel Phone & Feature-Level \\
+ \hline
+ Object Detection with Temporally-Aware \cite{b2} & 54.4 & 15 & Pixel Phone & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on COCO Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Feature Selective \cite{b6} & 57.8 & 37.5 & Nvidia TITAN X & Feature-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on YT Dataset} 
+\begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
+ \hline
+ Model & MAP & FPS & Machine & Architecture \\
+ \hline
+ Context Matters \cite{b4} & 68.73 & - & - & Box-Level \\
+ \hline
+\end{tabular}
+
+\captionof{table}{Results on OTB Challenge Dataset} 
+\begin{tabular}{ | p{2cm} | p{3em}| p{2em} | p{4em} | p{4em} | } 
+ \hline
+ Model & Success Rate & IoU & FPS & Machine \\
+ \hline
+ Spatially Supervised \cite{b5} & 0.564 & 0.455 & 20/60 & Nvidia TITAN X \\
+ \hline
+\end{tabular}
+\includegraphics[width=\columnwidth]{otb-challenge-results}
 
 \subsection{Conclusion Perfomance}
 Todo
