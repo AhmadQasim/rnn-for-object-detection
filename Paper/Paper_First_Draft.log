@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.29)  29 JUN 2019 13:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.6.29)  29 JUN 2019 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,30 +535,44 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 114--116
 [][] 
  []
 
-<images/video-tubelets-architecture.png, id=17, 1097.09875pt x 179.67125pt>
+<images/box-level-basic.png, id=17, 931.48pt x 275.0275pt>
+File: images/box-level-basic.png Graphic file (type png)
+<use images/box-level-basic.png>
+Package pdftex.def Info: images/box-level-basic.png  used on input line 127.
+(pdftex.def)             Requested size: 252.0pt x 74.40529pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 127--129
+[][]
+ []
+
+<images/video-tubelets-architecture.png, id=18, 1097.09875pt x 179.67125pt>
 File: images/video-tubelets-architecture.png Graphic file (type png)
 <use images/video-tubelets-architecture.png>
 Package pdftex.def Info: images/video-tubelets-architecture.png  used on input 
-line 130.
+line 131.
 (pdftex.def)             Requested size: 252.0pt x 41.26868pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 130--132
+Overfull \hbox (10.0pt too wide) in paragraph at lines 131--133
 [][] 
  []
 
-<images/scale-time-lattice.png, id=18, 1115.16624pt x 377.41pt>
+<images/scale-time-lattice.png, id=19, 1115.16624pt x 377.41pt>
 File: images/scale-time-lattice.png Graphic file (type png)
 <use images/scale-time-lattice.png>
-Package pdftex.def Info: images/scale-time-lattice.png  used on input line 144.
+Package pdftex.def Info: images/scale-time-lattice.png  used on input line 145.
 
 (pdftex.def)             Requested size: 252.0pt x 85.28214pt.
 
-Overfull \hbox (10.0pt too wide) in paragraph at lines 144--146
+Overfull \hbox (10.0pt too wide) in paragraph at lines 145--147
 [][] 
  []
 
-[2 <./images/D&T-architecture.png> <./images/video-tubelets-architecture.png> <
-./images/scale-time-lattice.png>]
+[2 <./images/D&T-architecture.png> <./images/box-level-basic.png> <./images/vid
+eo-tubelets-architecture.png> <./images/scale-time-lattice.png>]
+Underfull \hbox (badness 3168) in paragraph at lines 225--226
+[]\OT1/ptm/m/n/8 Mason Liu, Men-g-long Zhu, Marie White, Yinx-iao Li, Dmitry
+ []
+
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -570,28 +584,29 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
+[3] (./Paper_First_Draft.aux)
 
-] (./Paper_First_Draft.aux) ) 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4425 strings out of 494468
- 64493 string characters out of 6175060
- 132769 words of memory out of 5000000
- 8009 multiletter control sequences out of 15000+600000
+ 4440 strings out of 494468
+ 64683 string characters out of 6175060
+ 132783 words of memory out of 5000000
+ 8023 multiletter control sequences out of 15000+600000
  41145 words of font info for 88 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 41i,11n,35p,331b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on Paper_First_Draft.pdf (3 pages, 296900 bytes).
+ 41i,11n,35p,291b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Paper_First_Draft.pdf (3 pages, 322049 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
