@@ -127,10 +127,32 @@ ToDo
 ToDo
 
 \subsection{Object Detection from Video Tubelets with Convolutional Neural Networks}
-ToDo
+\includegraphics[width=\columnwidth]{video-tubelets-architecture}
+\begin{itemize}
+	\item Use selective search algorithm to generate around 2000 object proposals on each frame.
+	\item Use GoogleNet for feature extraction and then 30 SVMs for 30 VID classes to generate object proposal scores for each object proposal.
+	\item Track high confidence targets bi-directionally.
+	\item Two kinds of Perturbations:
+	\begin{itemize}
+		\item The first method is to generate new boxes around each tubelet box on each frame by randomly perturbing the boundaries of the tubelet box.
+		\item The second perturbation method is to replace each tubelet box with original object detections that have overlaps with the tubelet box beyond a threshold.	
+	\end{itemize}
+	\item Train a class-specific TCN using the tubelet features as input. The inputs are time series including detection scores, tracking scores and anchor offsets. The output values are probabilities whether each tubelet box contains objects of the class
+\end{itemize}
 
 \subsection{Optimizing Video Object Detection via Scale-Time Lattice}
-ToDo
+\includegraphics[width=\columnwidth]{scale-time-lattice}
+\begin{itemize}
+	\item Apply object detection on keyframes extracted adaptively.
+	\begin{itemize}
+		\item The extraction policy is based on number of objects and amount of movement in frames.
+		\item If higher number/movement of objects in frames then higher extraction rate.
+	\end{itemize}
+	\item Propagation and refinement unit, propagates the frames temporally and refines spatially.
+	\item For temporal propagation, use a small network such as resnet-18 to extract box features and a regressor to predict object movement from t to t + T.
+	\item For spatial refinement, use a regressor to refine the bounding boxes over increasing scale.
+
+\end{itemize}
 
 \subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks}
 ToDo
