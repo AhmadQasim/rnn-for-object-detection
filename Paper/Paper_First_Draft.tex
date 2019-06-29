@@ -5,6 +5,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
+\graphicspath{ {images/} }
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
@@ -13,11 +14,11 @@
 
 \title{Recurrent Neural Networks for object detection}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Bin Qassim Ahmad}
+\author{\IEEEauthorblockN{1\textsuperscript{st} Bin Qasim Ahmad}
 \IEEEauthorblockA{\textit{Technical University of Munich} \\
 \textit{Department of Informatics}\\
 Munich, Germany \\
-email address}
+ahmad.qasim@tum.de }
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} Pettirsch Arnd}
 \IEEEauthorblockA{\textit{Technical University of Munich)} \\
@@ -39,7 +40,27 @@ TBD.
 \section{Introduction}
 
 \subsection{Image and Video Object Detection in general}
-ToDo
+\begin{itemize}
+	\item Image object detection history.
+	\begin{itemize}
+		\item Bayesian methods before deep learning
+		\item ImageNet challenge and VID [15]
+		\item Deep Learning and AlexNet [16]
+	\end{itemize}
+	\item Single stage and 2-stage image object detectors.
+	\begin{itemize}
+		\item A two-stage pipeline firstly generates region proposals, which are then classified and refined. [17]
+		\item A single-stage method is often more efficient but less accurate. Directly regress on bounding boxes and classes. [18], [19]
+	\end{itemize}
+	\item Why is video object detection harder?
+	\begin{itemize}
+		\item Large size
+		\item Motion blur
+		\item Quality of the dataset
+		\item Partial occlusion
+		\item Unconventional Poses
+	\end{itemize}
+\end{itemize}
 
 \subsection{Recurrent Neural Networks in general}
 ToDo
@@ -57,16 +78,48 @@ ToDo
 ToDo
 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
-ToDo
+\includegraphics[width=\columnwidth]{KB-RANN-architecture}
+\begin{itemize}
+	\item Compute feature maps using a modified SqueezeNet architecture.
+	\item Propagate the features through a Recurrent Attentive Neural Network, comprised of:
+	\begin{itemize}
+		\item Attention Mechanism to detect key areas within the feature maps.
+		\item Convolutional LSTM for temporal feature propagation.	
+	\end{itemize}
+	\item Reverse gaussian feature maps are combined with the maps obtained from Conv. LSTM.
+	\begin{itemize}
+		\item These feature maps are based on learnable mean and covariance terms.
+		\item This prior knowledge is derived from the assumption that traffic signs are always located at the bias of the center.
+
+	\end{itemize}
+\end{itemize}
 
 \subsection{Looking fast and slow: memory-guided mobile video object detection}
-Todo
-
-\subsection{Delving Deeper into Convolutional Networks for Learning Video Represenations}
-ToDo
+\includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
+\begin{itemize}
+	\item Run multiple feature extractors sequentially or concurrently to obtain feature maps.
+	\begin{itemize}
+		\item 	The idea is to use small and large feature extractors to optimize performance.
+	\end{itemize}
+	\item Aggregate and refine these feature maps using convolutional LSTM based memory network.
+	\begin{itemize}
+		\item To improve speed of LSTM network, add skip connections and LSTM state groups.
+	\end{itemize}
+	\item Apply SSD-style detection on refined features to obtain classification and bounding boxes.
+	\item Use a reinforcement learning based policy for selection of which feature extractor to run.
+	\item Large and small frame extractors can run in parallel using asynchronous mode.
+\end{itemize}
 
 \subsection{Detect to Track and track to detect}
-ToDo
+\includegraphics[width=\columnwidth]{D&T-architecture}
+\begin{itemize}
+	\item Compute Convolutional feature maps using a Resnet-101 architecture.
+	\item Use a RPN (region proposal network) to find candidate regions in the frame.
+	\item ROI Pooling layer, to classify boxes and refine their coordinates (regression).
+	\item Find correlation features between two frames’ feature maps and do ROI tracking.
+	\item Due to memory constraints, use tracklets, which are class-based optimal paths in video.
+
+\end{itemize}
 
 \section{Box-Level-based Video Object Detection}
 
