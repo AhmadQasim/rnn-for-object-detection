@@ -114,82 +114,54 @@ As shown in Fig. 2 the final model uses LSTMs after all feature maps, because Li
 On the training strategy and the loss function Liu and Zhu do not provide any information.
 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{KB-RANN-architecture}
-\begin{itemize}
-	\item Compute feature maps using a modified SqueezeNet architecture.
-	\item Propagate the features through a Recurrent Attentive Neural Network, comprised of:
-	\begin{itemize}
-		\item Attention Mechanism to detect key areas within the feature maps.
-		\item Convolutional LSTM for temporal feature propagation.	
-	\end{itemize}
-	\item Reverse gaussian feature maps are combined with the maps obtained from Conv. LSTM.
-	\begin{itemize}
-		\item These feature maps are based on learnable mean and covariance terms.
-		\item This prior knowledge is derived from the assumption that traffic signs are always located at the bias of the center.
-
-	\end{itemize}
-\end{itemize}
+\caption{Architecture Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
+\end{figure}
+The aim of this paper is develop a real-time object detector for the purpose of autonomous driving. The network developed in this paper is termed as Knowledge-Based Recurrent Attentive Neural Network (KB-RANN) and the authors successfully compressed and accelerated their proposed model and deployed it to their own self-developed autonomous car. \newline
+The authors use SqueezeNet for feature extractor because SqueezeNet can provide AlexNet level of accuracy but with 50 times less parameters. Although there are better performing models like VGGNet and ResNet, but these models are computationally expensive. They make a few changes in the SqueezeNet architecture, which include changing the kernel size and also fine-tuning the backend by adding two fire modules at the end. \newline
+Attention mechanism is used to find the saliency maps from the deep feature maps obtained from SqueezeNet. Attention module obtains the input tensor X and outputs the saliency map $\tilde{X\textsubscript{t}}$. \newline
+LSTM is used as a memory mechanism in order to find long term dependencies between different frames and the characteristics of Attention and LSTM are exploited together by fusing them with each other, this fused module is termed as RANN. As saliency feature extraction is applied on the original deep feature maps, it is possible that some of the information is lost. Multiple RANNs are cascaded together into a chain to minimize the effect of feature information loss. Moreover, the output H\textsubscript{t} of each LSTM is concatenated with the original feature map and used as an input for the next attention module to refine the saliency feature extraction process. \newline
+The authors also add a domain and intuitive knowledge module to the KB-RANN architecture. It is assumed that traffic signs detection is one of the most important aspect of autonomous driving. The major focus of attention of a driver is at the center of vision and the traffic lights are always located at a bias from that central region of peoples' gazes. With these assumptions in place, domain knowledge about traffic signals is learned from the data itself by constraining the distribution to a 2D Gaussian function and learning the mean and covariance matrices from the data. \newline
 
 \subsection{Looking fast and slow: memory-guided mobile video object detection}
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
-\begin{itemize}
-	\item Run multiple feature extractors sequentially or concurrently to obtain feature maps.
-	\begin{itemize}
-		\item 	The idea is to use small and large feature extractors to optimize performance.
-	\end{itemize}
-	\item Aggregate and refine these feature maps using convolutional LSTM based memory network.
-	\begin{itemize}
-		\item To improve speed of LSTM network, add skip connections and LSTM state groups.
-	\end{itemize}
-	\item Apply SSD-style detection on refined features to obtain classification and bounding boxes.
-	\item Use a reinforcement learning based policy for selection of which feature extractor to run.
-	\item Large and small frame extractors can run in parallel using asynchronous mode.
-\end{itemize}
+\caption{Architecture Looking fast and slow: memory-guided mobile video object detection}
+\end{figure}
+The main contribution of this paper is the introduction of multiple feature extractors. Using multiple feature extractors, an interleaving policy can be defined which defines which feature extractor to use given the current state of detection. Using a intelligent interleaving policy and feature extractors with varying computational costs along with different feature representation capabilities, this paper aims to find a balance between detection accuracy and performance. \newline
+Let \textit{m} being the number of feature extractors. For the implementation of this paper, the authors constraint $\textit{m}=2$, a d let f\textsubscript{1} be the feature extractor which is computationally more expensive while f\textsubscript{2} be the feature extractor which is cheaper. Both feature extractors use MobileNetV2 architecture. f\textsubscript{1} uses a depth of 1.4 with $320*320$ input frames resolution while f\textsubscript{2} uses a depth of 0.35 with a lower $160*160$ input frames resolution. \newline
+A modified LSTM is used as a memory mechanism to preserve long term dependencies. The modifications in the LSTM are responsible for making the memory mechanism faster and also better at preserving long term dependencies. For faster memory mechanism, the authors make three modifications. They introduce bottlenecking and add a skip connection between the bottleneck and the output. Lastly, the LSTM states are grouped together and convulations are applied on each group seperately and the resultant states are then concatenated together to obtain the final states. The grouped convulations provide a speed-up. In order to improve the preservation of long term dependencies by the LSTM, the LSTM states are only updated when f\textsubscript{1} is run and not the f\textsubscript{2}, as feature maps obtained from f\textsubscript{2} are not of a higher quality as of f\textsubscript{1} and this can result in loss of important state information in the LSTM. \newline
+SSD-style detection is applied on refined feature maps obtained from the LSTM for classification and bounding boxes. \newline
+The interleaving policy which defines the feature extractor that should be used next is based on reinforcement learning. The state space of the reinforcement learning policy network $\pi$ consists of the LSTM states, $c\textsubscript{t}$, $h\textsubscript{t}$, as well as the differences between the states at different timestamps i.e. $c\textsubscript{t}-c\textsubscript{t-1}$, $h\textsubscript{t}-h\textsubscript{t-1}$ and lastly the action history $\eta\textsubscript{t}$. The action space has length \textit{m} and the action \textit{a} means that the feature extractor f\textsubscript{\textit{a}} should be run. \newline
+It is observed by the authors that, despite the employment of the interleaving policy the real-time detection is limited by the execution of the expensive f\textsubscript{1} feature extractor. They introduce an asynchronous framework for running the feature extractors f\textsubscript{1} and f\textsubscript{2} extractors in parallel. During testing, this asynchronous framework results in better results. \newline
 
 \subsection{Detect to Track and track to detect}
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{D&T-architecture}
-\begin{itemize}
-	\item Compute Convolutional feature maps using a Resnet-101 architecture.
-	\item Use a RPN (region proposal network) to find candidate regions in the frame.
-	\item ROI Pooling layer, to classify boxes and refine their coordinates (regression).
-	\item Find correlation features between two frames’ feature maps and do ROI tracking.
-	\item Due to memory constraints, use tracklets, which are class-based optimal paths in video.
-
-\end{itemize}
+\caption{Architecture Detect to Track and track to detect}
+\end{figure}
+This paper is based on the R-FCN\cite{b19} model and extends it for multiple frame and tracking. \newline
+The R-FCN\cite{b19} detection process consists of two stages, firstly a Region Proposal Network (RPN) is used to find the candidate region of interests (ROIs) and then a ROI pooling layer is used to perform classification of the regions into classes or the background. The input to the ROI pooling layer comes from a convulational layer put in place at the end of the ResNet feature extractor with output $x^t_{cls}$. The ROI layer outputs position sensitive feature maps and using a softmax layer these position senstive feature maps can be converted to class probablities for each ROI. On a second branch, R-FCN places a convulational layer at the end of the ResNet feature extractor which outputs $x^t_{reg}$ and this ouput is again used as an input to ROI pooling layer which generates the bounding boxes. \newline
+For each pair of frames I\textsuperscript{t}, I\textsuperscript{t+$\tau$}, a bounding box regression layer is introduced that performs position senstive ROI pooling on the concatentation of bounding box regression features $x^t_{reg}$, $x^{t-1}_{reg}$, which are also stacked with correlation maps, to perform bounding box transformation regression between frames. The correlation maps between the two frames are obtained by finding correlation between the feature maps of the two frames. Finding correlation on all the features in the feature maps will result in an explosion of dimensionality so the correlation maps are only limited to the local neighbors. Like mentioned before, the correlation maps are stacked with the bounding box features maps. \newline
 
 \section{Box-Level-based Video Object Detection}
 
 \subsection{Definition}
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{box-level-basic}
+\caption{Box-Level-based Video Object Detection}
+\end{figure}
 Bounding Boxes and Class probabilities are fed into the network and are refined temporally and/or spatially.
 
-\subsection{Object Detection from Video Tubelets with Convolutional Neural Networks}
-\includegraphics[width=\columnwidth]{video-tubelets-architecture}
-\begin{itemize}
-	\item Use selective search algorithm to generate around 2000 object proposals on each frame.
-	\item Use GoogleNet for feature extraction and then 30 SVMs for 30 VID classes to generate object proposal scores for each object proposal.
-	\item Track high confidence targets bi-directionally.
-	\item Two kinds of Perturbations:
-	\begin{itemize}
-		\item The first method is to generate new boxes around each tubelet box on each frame by randomly perturbing the boundaries of the tubelet box.
-		\item The second perturbation method is to replace each tubelet box with original object detections that have overlaps with the tubelet box beyond a threshold.	
-	\end{itemize}
-	\item Train a class-specific TCN using the tubelet features as input. The inputs are time series including detection scores, tracking scores and anchor offsets. The output values are probabilities whether each tubelet box contains objects of the class
-\end{itemize}
-
 \subsection{Optimizing Video Object Detection via Scale-Time Lattice}
+\begin{figure}[h]
 \includegraphics[width=\columnwidth]{scale-time-lattice}
-\begin{itemize}
-	\item Apply object detection on keyframes extracted adaptively.
-	\begin{itemize}
-		\item The extraction policy is based on number of objects and amount of movement in frames.
-		\item If higher number/movement of objects in frames then higher extraction rate.
-	\end{itemize}
-	\item Propagation and refinement unit, propagates the frames temporally and refines spatially.
-	\item For temporal propagation, use a small network such as resnet-18 to extract box features and a regressor to predict object movement from t to t + T.
-	\item For spatial refinement, use a regressor to refine the bounding boxes over increasing scale.
+\caption{Architecture Optimizing Video Object Detection via Scale-Time Lattice}
+\end{figure}
+The primary contribution of this paper is the Scale-Time Lattice which allows coarse detection, both temporally and spatially and then use temporal propagation and spatial refinement to go from coarse to fine detection. The lattice is composed of structures which connect together to perform the temporal and spatial operations. These structures are called Propagation and Refinement Units (PRUs). \newline
+PRUs work on the basis of two operators $F_\tau$ and $F_S$, and by carefully allocating resources to the two operators, a balance between the detection accuracy and the performance can be acheived. Assuming that two frames are sampled from a video at time $t$ and $t+2\tau$, both at scale $s$, the $F_\tau$ operator tries to model the movement of the bounding boxes from time $t$ to $t+\tau$ and from time $t+2\tau$ to $t+\tau$ irrespective of the scale offset between the scale $s$ and the ground truth frame scale $s+1$. The modeling of the bounding boxes offset from scale $s$ to $s+1$ is the task of the $F_S$ operator. The figure depicting the PRU gives more information on this. \newline
 
-\end{itemize}
 
 \subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks}
 In [4] Tripathi, Lipton, Belongie, Nguyen come up with a neural network architecture for video-based object detection. Their architecture consists two parts: A pseudo-labeler, which assigns labels to all video frames and a recurrent unit which refines those pseudo-labels by using the contextual information. Moreover, they describe a training strategy for their architecture and compare their approach to other models on the YouTube-Objects dataset. \newline
@@ -375,7 +347,9 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b15} Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. 2016. 
 \bibitem{b16} Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement.
 \bibitem{b17} Wei Liu, Dragomir Anguelov, Dumitru Erhan, Christian Szegedy, Scott Reed, Cheng-Yang Fu, Alexander C. Berg. SSD: Single Shot MultiBox Detector. 2016.
-\bibitem{b18} Sepp Hochreiter, Jürgen Schmidhuber. Long short-term memory In: Neural Computation (journal), vol. 9, issue 8, p. 1735-1780. 1997 
+\bibitem{b18} Sepp Hochreiter, Jürgen Schmidhuber. Long short-term memory In: Neural Computation (journal), vol. 9, issue 8, p. 1735-1780. 1997.
+\bibitem{b19} J. Dai, Y. Li, K. He, and J. Sun. R-FCN: Object detection via
+region-based fully convolutional networks. In NIPS, 2016.
 \end{thebibliography}
 \vspace{12pt}
 
