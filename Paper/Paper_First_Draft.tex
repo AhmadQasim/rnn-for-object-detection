@@ -221,8 +221,24 @@ Special to this architecture is, that LSTM does regression in two folds. There i
 Another type  of architectures for Video Object Detection defined, for example in [], are architectures which use Flow-Networks to consider the temporal context. The flow network estimates the optical flow which means it projects back the location in the current frame to an earlier frame. 
 
 \subsection{Deep Feature Flow for Video Recognition}
-ToDo
+Zhu, Xiong, Dai, Yuan and Wei develop in [2] a way to use flow nets to detect objects in video frames. As shown in figure 10 their architecture consists of three main parts: A network to create visual features, a network to create class probabilities and bounding boxes out of feature maps, and a network which estimates the optical flow. \newline
 
+\begin{figure} [h]
+\includegraphics[width=\columnwidth]{Flow}
+\caption{Architecture Deep Feature Flow for Video Recognition}
+\end{figure}
+
+The paper differs between key frames and other frames. The network to create visual features $ N_{feat} $ only processes on key frames. It is a fully convolutional network, which takes as an input the image and outputs a feature maps. As a feature network they use a pretrained version of ResNet. \newline
+
+The second network $ N_{task} $ does the recognition task over the feature maps. It performs on every frame.  Zhu, Xiong, Dai, Yuan and Wei use an R-FCN network for the recognition task.  \newline
+
+For all non-key frames the feature maps are not constructed by the feature network. Instead, they are propagated by a flow network $ N_{flow} $.  Zhu, Xiong, Dai, Yuan and Wei use a state-of-the-art CNN based FlowNet architecture as a flow network. The flow estimation is given by: \newline
+
+$ f_{i} =  W (f_{k},M_{i->k}, S_{i->k})$ \newline
+
+$ f_{k} $ is the key frame's feature map, $ M_{i->k} $ is a two dimensional flow field, it projects back the location of an object in the current frame to the location in the key frame by using bilinear interpolation and  $ S_{i->k} $ is scale field. \newline
+
+Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already see a potential improvement in changing the key frame policy. 
 
 \section{Comparison of different approaches}
 
