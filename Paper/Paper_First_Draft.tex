@@ -213,7 +213,9 @@ $ L_{MSE} = \dfrac{1}{n} TODO $ \newline
 
 As an alternative, Ning, Zhang, Huang, He, Ren and Wang mention a Heatmap as  input for the LSTM. Therefor the prediction and the visual features are concatenated before adding them to the LSTM. This is helpful to visualize the intermediate results. \newline
 
-Special to this architecture is, that LSTM does regression in two folds. There is a regression within one frame between the location inferences and the high-level features and there is also regression over the different frames of the sequence. 
+Special to this architecture is, that LSTM does regression in two folds. There is a regression within one frame between the location inferences and the high-level features and there is also regression over the different frames of the sequence. \newline
+
+\includegraphics[width=\columnwidth]{otb-challenge-results} \newline
 
 \section{Flow-based Object Detection}
 
@@ -242,7 +244,7 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
 
 \section{Comparison of different approaches}
 
-\subsection{General}
+\subsection{KITTI Dataset}
 \captionof{table}{Results on KITTI Dataset} 
 \begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
  \hline
@@ -252,7 +254,15 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
  \hline
  Feature Selective \cite{b6} & 81.3 & 30.8 & Nvidia TITAN X & Feature-Level \\
  \hline
-\end{tabular}
+\end{tabular} \newline
+
+As seen in Table I the architecture mentioned in "Recurrent Multi-frame Single Shot Detector for Video Object Detection" [1] outperforms the results of the paper "Feature Selective Small Object Detection via Knowledge-based Recurrent Attentive Neural Network" [6] in regard to the detection quality (mAP) and the computational speed (fps). \newline
+
+The main difference between those two architectures is that [6] performs on a single frame and uses LSTMs to include the spatial context within this frame. [1] instead is processing on a sequence of input frames and uses recurrent units to take the temporal context into consideration. \newline
+
+That leads to the hypothesis that performing on multiple frames is more beneficial than performing on only one frame. Which means that temporal context is more important than spatial context.   
+
+\subsection{ImageNet Dataset}
 
 \captionof{table}{Results on ImageNet Dataset} 
 \begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
@@ -275,7 +285,17 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
  \hline
  Object Detection with Temporally-Aware \cite{b2} & 54.4 & 15 & Pixel Phone & Feature-Level \\
  \hline
-\end{tabular}
+\end{tabular} \newline
+
+As seen in Table 2 both "Detect to Track and Track to Detect" and "Optimizing Video Detection with spatial-time lattice" reach better results than the other papers. Both "Detect to Track and track to Detect" and "Optimizing Video Detection with spatial-time lattice" perform on multiple frames in parallel. That leads to the advantage that both of them can use temporal context from the past and also from the future. The doubling of the temporal context information is probably one reason for their comparatively good performance. \newline
+
+In addition to the advantage of performing on multiple frames in parallel "Optimizing Video Detection with spatial-time lattice" uses not only the temporal context. In addition to the temporal context, this approach takes also different scales into consideration. This is a possible further reason for the good results. \newline
+
+The Flow-based approach [3] has comparatively bad results on ImageNet. We only evaluated one flow-based paper, but the comparatively bad performance could be an evidence that flow-based approaches' benefit in comparison to recurrent approaches does not exist or is very small. \newline
+
+"Looking Fast and Slow: Memory-Guided Mobile Video Object Detection" and "Mobile Video Object Detection with Temporally-Aware Feature Maps" cannot be compared to the other 3 approaches because they are running on mobile devices, which have pretty less computational power than the GPUs which are used by the other papers. Evaluating the comparatively bad results of "Mobile Video Object Detection with Temporally-Aware Feature Maps", leads to the hypothesis that the use of multiple LSTMs after every feature map is not so beneficial. 
+
+\subsection{Results on COCO Dataset}
 
 \captionof{table}{Results on COCO Dataset} 
 \begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
@@ -286,6 +306,8 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
  \hline
 \end{tabular}
 
+\subsection{Results on YouTube Dataset}
+
 \captionof{table}{Results on YT Dataset} 
 \begin{tabular}{ | p{2cm} | p{2em}| p{2em} | p{4em} | p{5em} | } 
  \hline
@@ -293,8 +315,11 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
  \hline
  Context Matters \cite{b4} & 68.73 & - & - & Box-Level \\
  \hline
-\end{tabular}
+\end{tabular} \newline
 
+"Context Matters" is the only paper of those which we have done some research on, which uses the YouTube Dataset to test their architecture. Unfortunately the results cannot be directly compared to the other papers. Also Tripathi, Lipton, Belongie and Nguygen only compare their model with non-recurrent ones. \newline
+
+\subsection{Results on OTB Challenge Dataset}
 \captionof{table}{Results on OTB Challenge Dataset} 
 \begin{tabular}{ | p{2cm} | p{3em}| p{2em} | p{4em} | p{4em} | } 
  \hline
@@ -302,20 +327,20 @@ Zhu, Xiong, Dai, Yuan and Wei use a fixed key frame scheduling and they already 
  \hline
  Spatially Supervised \cite{b5} & 0.564 & 0.455 & 20/60 & Nvidia TITAN X \\
  \hline
-\end{tabular}
-\includegraphics[width=\columnwidth]{otb-challenge-results}
+\end{tabular} \newline
 
-\subsection{Conclusion Perfomance}
-Todo
-
-\subsection{Conclusion Prediction Quality}
-Todo
-
+Out of the paper which are mentioned in this paper only "Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking" uses the OTB Challenge Dataset to evaluate their results. Unfortunately, they are only doing a comparison with non-recurrent approaches. 
 
 \section{Outro}
 
 \subsection{Conclusion}
-Todo
+The main conclusion of our research is that temporal context matters. All the papers came to the results that their models, which use more than one frame to detect objects outperform the models with similar baseline architecture which only proceed on single frames. \newline
+
+Moreover, we have seen that operating on multiple-frames at the same time is a beneficial approach. It doubles the amount of temporal context information, which leads to higher mAPs. \newline
+
+With respect to the computational speed we noticed that the recurrent units should not be too deep. And in addition working only on some keyframes can be beneficial to increase the speed. Therefor a good key-frame policy is needed. \newline
+
+For detection quality and also for computational speed it is beneficial to work on different scales. This enables us to use recurrency to take the spatial and the temporal context into consideration. 
 
 \subsection{Further work}
 Todo
