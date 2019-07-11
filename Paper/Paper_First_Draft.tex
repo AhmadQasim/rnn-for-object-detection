@@ -77,24 +77,30 @@ The second type of Recurrent Neural Networks is Gated Recurrent Units (GRUs). Th
 \section{Feature-based Video Object Detection}
 
 \subsection{Definition}
-First, we want to introduce feature-based Video Object Detection methods. As defined, for example, in [1] feature-based Video Object Detection methods fuse detectors which integrate features from multiple frames into their video detection. In most of our papers those detectors use recurrent units to integrate the visual features from different frames.  
+First, we want to introduce feature-based Video Object Detection methods. As defined, for example, in [1-2] feature-based Video Object Detection methods fuse detectors which integrate features from multiple frames into their video detection. In most of our papers those detectors use recurrent units to integrate the visual features from different frames.  
 
-\subsection{Recurrent Multi-frame Single Shot Detector for Video Object Detection}
-Broad, Jones and Lee have in [1] and [12] the idea to insert a fusion-layer into a classical Single Shot Detector (SSD) meta-architecture. Based on this idea they research in two main fields: On the one hand, they investigate different fusion methods and on the other hand they try several SSD meta-architectures. The final architecture is shown in Fig. 1. \newline
+\subsection{Recurrent Multi-frame Single Shot Detector for Video Object Detection [1]}
+Broad, Jones and Lee have in [1] and [12] the idea to design a multi-frame video object detector by inserting a fusion-layer into a classical Single Shot Detector (SSD) meta-architecture. Based on this idea they research in two main fields: On the one hand, they investigate different fusion methods and on the other hand they try several SSD meta-architectures [20-2.1.1; 20-3.6.1]. They test their approaches on the KITTI dataset [21] for autonomous driving and their model improves a state-of-the-art SSD model by 2.7 \% mAP. Finally they evaluate their best approach on Caltech Pedestrians Dataset [22] and find similar improvements of 5 \% in maP.   \newline
 
-SSDs is generally consist of two main components. First, an so called Feature Extractor which consist of convolutional and pooling layers. As an input the feature extractor gets an image and it outputs feature-maps. The other component is an Detection head which consists of convolutional layers and creates bounding boxes and class probabilities out of the feature maps created by the feature extractor. \newline
+SSDs is generally consist of two main components. First, an so called Feature Extractor which consist of convolutional and pooling layers. As an input the feature extractor gets an image and it outputs feature-maps. The other component is an Detection head which consists of convolutional layers and creates bounding boxes and class probabilities out of the feature maps created by the feature extractor. [1-3] \newline
 
-As mentioned above Broad, Jones and Lee have the idea to insert a fusion layer in between those two components. As fusion techniques they test simple element-wise operations (e.g.: add or max), simple concatenations of features maps and recurrent layers. Their experiments show that the recurrent layers perform best. Element-wise operations do not lead to an improvement in the mAP. And concatenations just add another depth to the network, which increases the mAP slightly.Only the Recurrent Units add new parameters, to learn temporal context, to the Network. In addition, they observe that recurrent units do not slow down the computational speed significantly. The state of the art SSD, which is used to test the different fusion techniques performs on 55 fps the recurrent one on 50 fps. As a recurrent unit they use GRU because they observ that the results were similar to the results when they use LSTMs but the GRUs perform faster. \newline
-
-In addition to the investigation on the type of fusion layer, Broad, Jones and Lee test different types of SSDs as a baseline for their architecture. They find out that for all baseline SSDs the mAP was higher in comparison to the non-recurrent models. The mAP increase by 2.7 to 5 percent on KITTI dataset. The best results is made with SequeezeNet+ as a baseline SSD network. \newline
-
-Unfortunately, there is only a little information on the training of the Recurrent Multi-frame Single Shot Detector. They use the SequeezeNet Training strategies and a pre-trained version of the baseline SSD. Finally, they use the SequezzeNet fine tuning strategy to train the whole network afterwards. 
+As mentioned above Broad, Jones and Lee have the idea to insert a fusion layer in between those two components. As fusion techniques they test simple element-wise operations (e.g.: add or max), simple concatenations of features maps and recurrent layers [1-3]. Their experiments show that the recurrent layers perform best. Element-wise operations do not lead to an improvement in the mAP. And concatenations just add another depth to the network, which increases the mAP slightly.Only the Recurrent Units add new parameters, to learn temporal context, to the Network. In addition, they observe that recurrent units do not slow down the computational speed significantly. The state of the art SSD, which is used to test the different fusion techniques performs on 55 fps the recurrent one on 50 fps [1-4.1]. As a recurrent unit they use GRU because they observe that the results were similar to the results when they use LSTMs but the GRUs are faster to train [1-3.1.1]. Their final architecture is shown in Figure 1.  \newline
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{RMFSSD}
-\caption{Architecture Recurent Multi-frame single shot detector}
+\caption{Architecture: Recurent Multi-frame single shot detector [1]. The Feature Extractor generates feature maps for four frames and feeds those feature maps into the GRUs. Detection Head uses the final feature maps which are created by the GRU with respect to the temporal context to create Bounding Boxes and Class probabilities}
 \end{figure}
 
+In addition to the investigation on the type of fusion layer, Broad, Jones and Lee test different types of SSDs as a baseline for their architecture. They find out that for all baseline SSDs the mAP was higher in comparison to the non-recurrent models. The mAP increase by 1.4 to 4.4 percent on KITTI dataset.  The best mAP is made with SqueezeDet+ [23] as a baseline SSD network [1-4.2].  \newline
+
+Finally Broad, Jones and Lee use the Caltech Pedestrians dataset to expolore the effect of the number of prior frames and the frame-rate. They compare the single-frame SSD model, with the RMf-SSD using the prior frames and the RMf-SSD model using the frames t-2, t-4 and t-6. The improvement was 3 percentage points higher by using the frames t-2, t-4 and t-6 in comparison to use the prior 3 frames [1-4.4]. \newline  
+
+There is only a little information on the training of the Recurrent Multi-frame Single Shot Detector. They use the SequeezeDet Training strategies [23-3.3] and a pre-trained version of the baseline SSD. Finally, they use the SequezzeDet fine tuning strategy to train the whole network afterwards [12-2]. \newline
+
+Overall Broad, Jones and Lee show that they are able to improve single-frame models on Kitti dataset and also on Caltech Predestrians dataset by adding recurrent units. Finally they reach an mAP of 83 \% on KITTI dataset [1-4.2] and a miss-rate of 29 \% on the Caltech Pedestrians dataset [1-4.1]. \newline
+
+This architecture is comparable to the architectures described in 2-B and 2-E. Main differences are that 2-B uses more than one recurrent unit and 2-E different feature extractors for different frames. But all of them feed feature maps of different frames into recurrent units. 
+ 
 \subsection{Mobile Video Object Detection with Temporally Aware Feature Maps}
 Liu and Zhu have the goal to design a video object detection architecture, which can run real-time on low-powered mobile and embedded devices. The key of their method is to combine convolutional layers with convolutional LSTMs. On this core idea they do some further research. They test the benefit from adding an LSTM into the baseline SSD, different types of Recurrent Layers (LSTM, GRU and bottleneck LSTMs), different dimensions of their bottleneck LSTMs and different LSTM placement strategies (Single LSTM placement and multiple LSTM placement). Their outcome is described in [2]  \newline
 
@@ -391,6 +397,10 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b18} Sepp Hochreiter, Jürgen Schmidhuber. Long short-term memory In: Neural Computation (journal), vol. 9, issue 8, p. 1735-1780. 1997.
 \bibitem{b19} J. Dai, Y. Li, K. He, and J. Sun. R-FCN: Object detection via
 region-based fully convolutional networks. In NIPS, 2016.
+\bibitem{b20} Jonathan Huang, Vivek Rathod, Chen Sun, Menglong Zhu, Anoop Korattikara, Alireza Fathi, Ian Fischer, Zbigniew Wojna, Yang Song, Sergio Guadarrama, et al.. Speed/accuracy trade-offs for modern convolutional object detectors . In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR}, 2017.
+\bibitem{b21} Andreas Geiger, Philip Lenz and Raquel Urtasun. Are we ready for autonomous driving? The kitti vision benchmark suite. In \textit{Conference on Computer Vision and Patern Recognition (CVPR)}, 2012.
+\bibitem{b22} P. Dollár, C. Wojek, B. Schiele and P. Perona. Pedestrian detection: A benchmark. In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2009.
+\bibitem{b23} Bichen Wu, Forrest Iandola, Peter H. Jin, Kurt Keutzer. SequeezeDet: Unified, Small, Low Power Fully Convolutional Neural Networks for Real-Time Object Detection for Autonomous Driving. In CVPR \textit{Workshops}, 2017.
 \end{thebibliography}
 \vspace{12pt}
 
