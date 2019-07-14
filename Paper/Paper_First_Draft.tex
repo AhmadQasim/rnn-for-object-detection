@@ -101,23 +101,27 @@ Overall Broad, Jones and Lee show that they are able to improve single-frame mod
 
 This architecture is comparable to the architectures described in 2-B and 2-E. Main differences are that 2-B uses more than one recurrent unit and 2-E different feature extractors for different frames. But all of them feed feature maps of different frames into recurrent units. 
  
-\subsection{Mobile Video Object Detection with Temporally Aware Feature Maps}
-Liu and Zhu have the goal to design a video object detection architecture, which can run real-time on low-powered mobile and embedded devices. The key of their method is to combine convolutional layers with convolutional LSTMs. On this core idea they do some further research. They test the benefit from adding an LSTM into the baseline SSD, different types of Recurrent Layers (LSTM, GRU and bottleneck LSTMs), different dimensions of their bottleneck LSTMs and different LSTM placement strategies (Single LSTM placement and multiple LSTM placement). Their outcome is described in [2]  \newline
+\subsection{Mobile Video Object Detection with Temporally Aware Feature Maps [2]}
+Liu and Zhu have in [2] the goal to design a video object detection architecture, which can run real-time (15 fps) on low-powered mobile and embedded devices. The key of their method is to combine convolutional layers with convolutional LSTMs. On this core idea they do some further research. They test the benefit from adding an LSTM into the baseline SSD, different types of Recurrent Layers (LSTM, GRU and bottleneck LSTMs), different dimensions of their bottleneck LSTMs and different LSTM placement strategies (Single LSTM placement and multiple LSTM placement). They test their model on Imagenet VID 2015 dataset and reached a mAP of 54.4 \% while performing on 15 fps.  \newline
 
-In the beginning they simply add one LSTM to their baseline SSDs architecture - MobileNet. They observe that adding the LSTM improves the mAP in comparison to their baseline SSD architecture. Moreover, they investigate that the greatest improve is by adding the LSTM after the 13th convolutional Layer of the SSD. \newline
+In the beginning they simply add one LSTM to their baseline SSDs architecture - MobileNet [24]. They observe that adding the LSTM improves the mAP in comparison to their baseline SSD architecture. Moreover, they investigate that the greatest improve is by adding the LSTM after the 13th convolutional Layer of the SSD. [2-4.2] \newline
 
-Afterwards, they compare LSTMs, GRUs and Bottleneck LSTMs as different types of Recurrent units by placing them after the 13th convolutional layer. Bottleneck-LSTMs have been designed by Liu and Zhu to increase the efficiency of LSTMs.  For that purpose they use slightly unusual the ReLU function as activation for the LSTM. Moreover they, compute a so called Bottleneck feature map with less input channel than the originally feature map and feed this map into the LSTM to reduce computational power. They come to the conclusion that Bottleneck-LSTMs are more effective the LSTMs and in the case of a convolutional kernel greater 1x1 even more effective than GRUs while attaining comparable perfomance. \newline
+Afterwards, they compare LSTMs, GRUs and Bottleneck LSTMs as different types of Recurrent units by placing them after the 13th convolutional layer. Bottleneck-LSTMs have been designed by Liu and Zhu to increase the efficiency of LSTMs.  For that purpose they use slightly unusual the ReLU function as activation for the LSTM. Moreover they, compute a so called Bottleneck feature map with less input channel than the originally feature map and feed this map into the LSTM to reduce computational power. They come to the conclusion that Bottleneck-LSTMs are more effective the LSTMs and in the case of a convolutional kernel greater 1x1 even more effective than GRUs while attaining comparable perfomance. [2-3.4; 2-4.2]\newline
 
-In addition to the bottleneck LSTMs Liu and Zhu extend their network with multipliers. They use $\alpha_{base}$, $\alpha_{ssd}$ and $\alpha_{lstm}$ as multiplier to scale the channel dimension of each layer. During their research they find out that the accuracy of the model remains near constant up to $\alpha_{ssd}= 0.25 \alpha$ which means that the output of each LSTM is one-fourth the size of the input. For the other multipliers they use the values: $\alpha_{base} = \alpha$ and $\alpha_{ssd} = 0.5 \alpha$. \newline
+In addition to the bottleneck LSTMs Liu and Zhu extend their network with multipliers. They use $\alpha_{base}$, $\alpha_{ssd}$ and $\alpha_{lstm}$ as multiplier to scale the channel dimension of each layer. During their research they find out that the accuracy of the model remains near constant up to $\alpha_{ssd}= 0.25 \alpha$ which means that the output of each LSTM is one-fourth the size of the input. For the other multipliers they use the values: $\alpha_{base} = \alpha$ and $\alpha_{ssd} = 0.5 \alpha$. [2-3.3; 2-4.2] \newline
 
-As shown in Fig. 2 the final model uses LSTMs after all feature maps, because Liu and Zhu observe that there a slight performance improve by adding LSTMs after every feature map and nearly no change in computational cost. 
+As shown in Fig. 2 the final model uses LSTMs after all feature maps, because Liu and Zhu observe that there a slight performance improve by adding LSTMs after every feature map and nearly no change in computational cost [2-4.2]. \newline
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{Liu_Zhu}
-\caption{Architecture Mobile Video Object Detection with temporally aware feature maps}
+\caption{Architecture Mobile Video Object Detection with temporally aware feature maps [2]. First 13 Convolutional Layeer create Feature Maps. Those Feature Maps are fed into the Bottleneck-LSTMs (faster LSTMs). Afterwards Convolutional-Layer create new Feature Maps and feed them again into Bottleneck-LSTMs.}
 \end{figure}
 
-On the training strategy and the loss function Liu and Zhu do not provide any information.
+On the training strategy and the loss function Liu and Zhu do not provide any information. \newline
+
+Liu's and Zhu's final model reaches a mAP of 54.4 percent on Imagenet VID dataset. They compare their model with some single frame SSD networks. Especially the comparison with the Mobilenet-SSD model is interesting because this model also works on a mobile machine in real-time. Liu and Zhu outperform the Mobilenet-SSD network by 4.1 percent in mAP. Moreover they reach shorter run times on the Pixel 2 phone then the Mobilenet-SSD architecture. \newline
+
+This architecture can be especially compared to the model described in "Looking Fast and Slow" because both of them are processing on a mobile device and are feature-based architectures. But "Looking Fast and Slow" differs because it does not treat every frame in the same way and proceeds with different features extractors on different frames. 
 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
 \begin{figure}[h]
@@ -401,6 +405,7 @@ region-based fully convolutional networks. In NIPS, 2016.
 \bibitem{b21} Andreas Geiger, Philip Lenz and Raquel Urtasun. Are we ready for autonomous driving? The kitti vision benchmark suite. In \textit{Conference on Computer Vision and Patern Recognition (CVPR)}, 2012.
 \bibitem{b22} P. Dollár, C. Wojek, B. Schiele and P. Perona. Pedestrian detection: A benchmark. In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2009.
 \bibitem{b23} Bichen Wu, Forrest Iandola, Peter H. Jin, Kurt Keutzer. SequeezeDet: Unified, Small, Low Power Fully Convolutional Neural Networks for Real-Time Object Detection for Autonomous Driving. In CVPR \textit{Workshops}, 2017.
+\bibitem{b24} A. Howard, M. Zhu, B. Chen, D. Kalenichenko, W. Wang, T. Weyand, M. Andreetto, H. Adam. Mobilenets: Efficient convolutional neural networks for mobile vision applications. \textit{arXiv preprint arXiv:1704.04861}, 2017.
 \end{thebibliography}
 \vspace{12pt}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  11 JUL 2019 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  14 JUL 2019 13:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -608,33 +608,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-<images/Liu_Zhu.png, id=13, 710.655pt x 219.7008pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+[2 <./RMFSSD.png>]
+<images/Liu_Zhu.png, id=20, 710.655pt x 219.7008pt>
 File: images/Liu_Zhu.png Graphic file (type png)
 <use images/Liu_Zhu.png>
 Package pdftex.def Info: images/Liu_Zhu.png  used on input line 116.
 (pdftex.def)             Requested size: 252.0pt x 77.90549pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 2799) in paragraph at lines 117--117
+\OT1/ptm/m/n/10 into the Bottleneck-LSTMs (faster LSTMs). Af-ter-wards
+ []
 
-[2 <./RMFSSD.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
 <images/KB-RANN-architecture.png, id=21, 1016.79875pt x 379.4175pt>
 File: images/KB-RANN-architecture.png Graphic file (type png)
 <use images/KB-RANN-architecture.png>
 Package pdftex.def Info: images/KB-RANN-architecture.png  used on input line 12
-4.
+8.
 (pdftex.def)             Requested size: 252.0pt x 94.03203pt.
 
-Underfull \hbox (badness 1509) in paragraph at lines 127--132
+Underfull \hbox (badness 1509) in paragraph at lines 131--136
 \OT1/ptm/m/n/10 de-vel-oped in this pa-per is termed as Knowledge-Based
  []
 
 
-Underfull \hbox (badness 6078) in paragraph at lines 127--132
+Underfull \hbox (badness 6078) in paragraph at lines 131--136
 \OT1/ptm/m/n/10 Re-cur-rent At-ten-tive Neu-ral Net-work (KB-RANN) and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
@@ -643,114 +660,110 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--132
 File: images/looking-fast-and-slow-architecture.png Graphic file (type png)
 <use images/looking-fast-and-slow-architecture.png>
 Package pdftex.def Info: images/looking-fast-and-slow-architecture.png  used on
- input line 135.
+ input line 139.
 (pdftex.def)             Requested size: 252.0pt x 101.54277pt.
 
-Underfull \hbox (badness 1708) in paragraph at lines 138--144
+Underfull \hbox (badness 1708) in paragraph at lines 142--148
 \OT1/ptm/m/n/10 For faster mem-ory mech-a-nism, the au-thors make three
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 138--144
+Underfull \hbox (badness 1796) in paragraph at lines 142--148
 \OT1/ptm/m/n/10 SSD-style de-tec-tion is ap-plied on re-fined fea-ture maps
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--144
+Underfull \hbox (badness 10000) in paragraph at lines 142--148
 
  []
 
 [3 <./images/Liu_Zhu.png> <./images/KB-RANN-architecture.png> <./images/looking
 -fast-and-slow-architecture.png>]
-<images/D&T-architecture.png, id=30, 1114.1625pt x 465.74pt>
+<images/D&T-architecture.png, id=29, 1114.1625pt x 465.74pt>
 File: images/D&T-architecture.png Graphic file (type png)
 <use images/D&T-architecture.png>
-Package pdftex.def Info: images/D&T-architecture.png  used on input line 147.
+Package pdftex.def Info: images/D&T-architecture.png  used on input line 151.
 (pdftex.def)             Requested size: 252.0pt x 105.33418pt.
 
-Underfull \hbox (badness 1533) in paragraph at lines 150--153
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 154--157
 \OT1/ptm/m/n/10 layer is in-tro-duced that per-forms po-si-tion sen-stive ROI
  []
 
 
-Underfull \hbox (badness 1590) in paragraph at lines 150--153
+Underfull \hbox (badness 1590) in paragraph at lines 154--157
 \OT1/ptm/m/n/10 frames are ob-tained by find-ing cor-re-la-tion be-tween the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
-<images/box-level-basic.png, id=31, 931.48pt x 275.0275pt>
+<images/box-level-basic.png, id=30, 931.48pt x 275.0275pt>
 File: images/box-level-basic.png Graphic file (type png)
 <use images/box-level-basic.png>
-Package pdftex.def Info: images/box-level-basic.png  used on input line 158.
+Package pdftex.def Info: images/box-level-basic.png  used on input line 162.
 (pdftex.def)             Requested size: 252.0pt x 74.40529pt.
-<images/scale-time-lattice.png, id=32, 1115.16624pt x 377.41pt>
+<images/scale-time-lattice.png, id=31, 1115.16624pt x 377.41pt>
 File: images/scale-time-lattice.png Graphic file (type png)
 <use images/scale-time-lattice.png>
-Package pdftex.def Info: images/scale-time-lattice.png  used on input line 165.
+Package pdftex.def Info: images/scale-time-lattice.png  used on input line 169.
 
 (pdftex.def)             Requested size: 252.0pt x 85.28214pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--170
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
-[4 <./images/D&T-architecture.png> <./images/box-level-basic.png> <./images/sca
-le-time-lattice.png>]
-Underfull \hbox (badness 2181) in paragraph at lines 173--174
+[4 <./images/D&T-architecture.png> <./images/box-level-basic.png>]
+Underfull \hbox (badness 2181) in paragraph at lines 177--178
 \OT1/ptm/m/n/10 Their ar-chi-tec-ture con-sists two parts: A pseudo-labeler,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
-<images/ContextMatters.png, id=40, 539.616pt x 200.4288pt>
+<images/ContextMatters.png, id=39, 539.616pt x 200.4288pt>
 File: images/ContextMatters.png Graphic file (type png)
 <use images/ContextMatters.png>
-Package pdftex.def Info: images/ContextMatters.png  used on input line 178.
+Package pdftex.def Info: images/ContextMatters.png  used on input line 182.
 (pdftex.def)             Requested size: 252.0pt x 93.59906pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 198.
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 202.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 198.
-<images/ROLO.png, id=41, 540.5796pt x 211.5102pt>
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 202.
+<images/ROLO.png, id=40, 540.5796pt x 211.5102pt>
 File: images/ROLO.png Graphic file (type png)
 <use images/ROLO.png>
-Package pdftex.def Info: images/ROLO.png  used on input line 210.
+Package pdftex.def Info: images/ROLO.png  used on input line 214.
 (pdftex.def)             Requested size: 252.0pt x 98.5965pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
@@ -761,20 +774,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
-
+[5 <./images/scale-time-lattice.png> <./images/ContextMatters.png> <./images/RO
+LO.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
- []
-
-<images/otb-challenge-results.jpg, id=42, 959.585pt x 763.85374pt>
-File: images/otb-challenge-results.jpg Graphic file (type jpg)
-<use images/otb-challenge-results.jpg>
-Package pdftex.def Info: images/otb-challenge-results.jpg  used on input line 2
-24.
-(pdftex.def)             Requested size: 252.0pt x 200.59036pt.
-
-Overfull \hbox (10.0pt too wide) in paragraph at lines 224--225
-[][] 
  []
 
 
@@ -782,26 +785,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
-[5 <./images/ContextMatters.png> <./images/ROLO.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+<images/otb-challenge-results.jpg, id=47, 959.585pt x 763.85374pt>
+File: images/otb-challenge-results.jpg Graphic file (type jpg)
+<use images/otb-challenge-results.jpg>
+Package pdftex.def Info: images/otb-challenge-results.jpg  used on input line 2
+28.
+(pdftex.def)             Requested size: 252.0pt x 200.59036pt.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 228--229
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
  []
 
 <images/Flow.png, id=48, 464.4552pt x 166.221pt>
 File: images/Flow.png Graphic file (type png)
 <use images/Flow.png>
-Package pdftex.def Info: images/Flow.png  used on input line 235.
+Package pdftex.def Info: images/Flow.png  used on input line 239.
 (pdftex.def)             Requested size: 252.0pt x 90.18661pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
@@ -818,170 +832,167 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
+
+ []
+
+
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 254.
+(caption)                outside box or environment on input line 258.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 257--257
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 261--261
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--259
+Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/ptm/m/n/10 Feature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--261
+Underfull \hbox (badness 10000) in paragraph at lines 265--265
 []\OT1/ptm/m/n/10 Nvidia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
-[]\OT1/ptm/m/n/10 Feature-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--264
-
- []
-
-
-Underfull \hbox (badness 2529) in paragraph at lines 265--266
-\OT1/ptm/m/n/10 Small Ob-ject De-tec-tion via Knowledge-based Re-cur-rent
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 265--266
+[]\OT1/ptm/m/n/10 Feature-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 259--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 2529) in paragraph at lines 269--270
+\OT1/ptm/m/n/10 Small Ob-ject De-tec-tion via Knowledge-based Re-cur-rent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+[6 <./images/otb-challenge-results.jpg> <./images/Flow.png>]
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 280--280
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--278
-[]\OT1/ptm/m/n/10 Nvidia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
-[]\OT1/ptm/m/n/10 Feature-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--280
-[]\OT1/ptm/m/n/10 Nvidia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
-[]\OT1/ptm/m/n/10 Feature-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 282--282
-[]\OT1/ptm/m/n/10 Scale-Time
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 282--282
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--284
-[]\OT1/ptm/m/n/10 Scale-Time
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+[]\OT1/ptm/m/n/10 Feature-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []\OT1/ptm/m/n/10 Nvidia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+[]\OT1/ptm/m/n/10 Feature-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 286--286
-[]\OT1/ptm/m/n/10 DeepFeature
+[]\OT1/ptm/m/n/10 Scale-Time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--286
+[]\OT1/ptm/m/n/10 Nvidia
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 288--288
-[]\OT1/ptm/m/n/10 DeepFeature
+[]\OT1/ptm/m/n/10 Scale-Time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--288
+[]\OT1/ptm/m/n/10 Nvidia
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 290--290
-[]\OT1/ptm/m/n/10 Pixel
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
-[]\OT1/ptm/m/n/10 Feature-
+[]\OT1/ptm/m/n/10 DeepFeature
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 292--292
+[]\OT1/ptm/m/n/10 DeepFeature
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+[]\OT1/ptm/m/n/10 Pixel
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+[]\OT1/ptm/m/n/10 Feature-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 []\OT1/ptm/m/n/10 Object
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 \OT1/ptm/m/n/10 De-tec-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 \OT1/ptm/m/n/10 with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 \OT1/ptm/m/n/10 Temporally-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
 []\OT1/ptm/m/n/10 Pixel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--293
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--295
-
- []
-
-
-Underfull \vbox (badness 3724) has occurred while \output is active []
-
- [6 <./images/otb-challenge-results.jpg> <./images/Flow.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--299
+Underfull \hbox (badness 10000) in paragraph at lines 278--299
 
  []
 
@@ -991,77 +1002,77 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--301
  []
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 309--309
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 313--313
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--311
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Feature
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--311
+Underfull \hbox (badness 10000) in paragraph at lines 315--315
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 []\OT1/ptm/m/n/10 Feature-
  []
 
 
-Overfull \hbox (1.6698pt too wide) in paragraph at lines 320--320
+Overfull \hbox (1.6698pt too wide) in paragraph at lines 324--324
 []\OT1/ptm/m/n/10 MAP| 
  []
 
 
-Overfull \hbox (2.5pt too wide) in paragraph at lines 322--322
+Overfull \hbox (2.5pt too wide) in paragraph at lines 326--326
 []\OT1/ptm/m/n/10 68.73| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--325
+Underfull \hbox (badness 10000) in paragraph at lines 322--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
-Overfull \hbox (1.65955pt too wide) in paragraph at lines 332--332
+Overfull \hbox (1.65955pt too wide) in paragraph at lines 336--336
 []\OT1/ptm/m/n/10 Success
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 334--334
+Underfull \hbox (badness 1831) in paragraph at lines 338--338
 []\OT1/ptm/m/n/10 Spatially Su-
  []
 
 
-Overfull \hbox (2.5pt too wide) in paragraph at lines 334--334
+Overfull \hbox (2.5pt too wide) in paragraph at lines 338--338
 []\OT1/ptm/m/n/10 0.455| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
 []\OT1/ptm/m/n/10 Nvidia
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--337
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 334--341
 
  []
 
@@ -1070,8 +1081,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 347--348
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 349--350
+
+ []
+
 [7]
-Underfull \hbox (badness 3168) in paragraph at lines 386--387
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 390--391
 []\OT1/ptm/m/n/8 Mason Liu, Men-g-long Zhu, Marie White, Yinx-iao Li, Dmitry
  []
 
@@ -1086,31 +1107,27 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[8] (./Paper_First_Draft.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[8] (./Paper_First_Draft.aux) ) 
 Here is how much of TeX's memory you used:
- 5571 strings out of 492616
- 85494 string characters out of 6129481
- 166154 words of memory out of 5000000
- 9407 multiletter control sequences out of 15000+600000
+ 5572 strings out of 492616
+ 85499 string characters out of 6129481
+ 166174 words of memory out of 5000000
+ 9408 multiletter control sequences out of 15000+600000
  39474 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,8n,39p,1051b,252s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019
-/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on Paper_First_Draft.pdf (8 pages, 986062 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Paper_First_Draft.pdf (8 pages, 988089 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
