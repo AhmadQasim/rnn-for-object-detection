@@ -173,39 +173,43 @@ The primary contribution of this paper is the Scale-Time Lattice which allows co
 PRUs work on the basis of two operators $F_\tau$ and $F_S$, and by carefully allocating resources to the two operators, a balance between the detection accuracy and the performance can be acheived. Assuming that two frames are sampled from a video at time $t$ and $t+2\tau$, both at scale $s$, the $F_\tau$ operator tries to model the movement of the bounding boxes from time $t$ to $t+\tau$ and from time $t+2\tau$ to $t+\tau$ irrespective of the scale offset between the scale $s$ and the ground truth frame scale $s+1$. The modeling of the bounding boxes offset from scale $s$ to $s+1$ is the task of the $F_S$ operator. The figure depicting the PRU gives more information on this. \newline
 
 
-\subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks}
-In [4] Tripathi, Lipton, Belongie, Nguyen come up with a neural network architecture for video-based object detection. Their architecture consists two parts: A pseudo-labeler, which assigns labels to all video frames and a recurrent unit which refines those pseudo-labels by using the contextual information. Moreover, they describe a training strategy for their architecture and compare their approach to other models on the YouTube-Objects dataset. \newline
+\subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks [3]}
+In [4] Tripathi, Lipton, Belongie, Nguyen come up with a neural network architecture for video-based object detection. Their architecture consists two parts: A pseudo-labeler, which assigns labels to all video frames and a recurrent unit which refines those pseudo-labels by using the contextual information. Moreover, they describe a training strategy for their architecture and compare their approach to other models on the YouTube-Objects dataset (v2.0), which consists of the ten categories airplane, bird, boat, car, cow, dog, horse, mbike, train. Their model reaches an mAP of 68.73 percent which improves the strongest image-based baseline for Youtube-Video Objects dataset of 7.1\% [4-Abstract; 25]. \newline
 
-The final architecture can be found in \textbf{Fig 2}. Tripathi, Lipton and Belongie first train the pseudo-labeler, which is an YOLO object detection network originally trained for 20-class PASCAL VOC on the YouTube-Video Dataset. As specified in YOLO [] they minimize the weighted squared detection loss and optimize classification and localization error simultaneously. 
+The final architecture can be found in \textbf{Fig 2}. Tripathi, Lipton and Belongie first train the pseudo-labeler, which is an YOLO object detection network [26] originally trained for 20-class PASCAL VOC [27] on the YouTube-Video Dataset. As specified in YOLO  they minimize the weighted squared detection loss and optimize classification and localization error simultaneously [4-3]. 
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{ContextMatters}
-\caption{Architecture Context Matters: Refining Object Detection in Video with Recurrent Neural Networks}
+\caption{Architecture Context Matters: Refining Object Detection in Video with Recurrent Neural Networks [4]. First the "Pseudolabler" creates bounding boxes and class probabilities for every input frame. Afterwards the GRU fuses the output of the current and some past frames and refines the bounding boxes and class probabilities.}
 \end{figure}
 
-After training the pseudo-labeler they train the Recurrent Neural Network, which takes as an input the pseudo-labels and outputs improved prediction. The RNN consists of two GRU layers. \newline
+After training the pseudo-labeler they train the Recurrent Neural Network, which takes as an input the pseudo-labels and outputs improved prediction. The RNN consists of two GRU layers [4-2]. \newline
 
-For training the whole network they use the following loss function to take both accuracy at the target frame and consistency of predictions across adjacent time steps into consideration: \newline
+For training the whole network they use the following loss function to take both accuracy at the target frame and consistency of predictions across adjacent time steps into consideration. They choose the values of $\alpha = 0.2$, $\beta = 0.2$ and $\gamma = 0.1$ based on the detection performance on the validation set [4-2.1]: \newline
 
 $ loss = d_{loss} + \alpha \cdot s_{loss} + \beta \cdot c_{loss} + \gamma \cdot pc_{loss} $ \newline
 
-For the final output Tripathi, Lipton, Belongie and Nguygen use the object detection loss as described in YOLO []:
+For the final output Tripathi, Lipton, Belongie and Nguygen use the object detection loss as described in YOLO [26, 4-2.1.1]: \newline
+
+$ detection_{loss} = \lambda_{corr} $ \textit{todo}
+
+The similarity loss considers the dissimilarity between the pseudo-labels and prediction at each frame t [4-2.1.2]: \newline
 
 \textbf{ToDo}
 
-The similarity loss considers the dissimilarity between the pseudo-labels and prediction at each frame t:
-
-\textbf{ToDo}
-
-The category loss takes wrong class probabilities into consideration:  
+The category loss takes wrong class probabilities into consideration [4-2.1.3]:  
 
 \textbf{•}
 
-And the prediction-consistency loss regularizes the model by encouraging smoothness predictions across the time-steps:
+And the prediction-consistency loss regularizes the model by encouraging smoothness predictions across the time-steps [4-2.1.4]:
 
 \textbf{•}
 
-During the evaluation they find two possible areas of improvement for their approach. On the one hand the RNN is not able to recover from wrong predictions made by the pseudo-labeler after they have been fed into the RNN.  On the other hand, they observe that their network is not robust to motion. 
+During the evaluation they find two possible areas of improvement for their approach. On the one hand the RNN is not able to recover from wrong predictions made by the pseudo-labeler after they have been fed into the RNN.  On the other hand, they observe that their network is not robust to motion [4-3.4].
+
+Tripathi, Lipton, Belongie and Nguyen test their model on the Youtube-Objects dataset. Overall they outperform the best no-recurrent architecture (DA Yolo) in their comparison by 7\% mAP. It's notable that DA YOLO reaches gut results in detection of airplanes and birds but comparatively bad result in detection of cats, cows, dogs, horses and mbike. In those categories the recurrent networks in the comparison outperform the non-recurrent ones [4-3.1]. \newline
+
+The architecture mentioned in "Context Matters: Refining Object Detection in Video with Recurrent Neural Networks" is pretty similar to the one used in [4]. Both are using the YOLO network architecture as a baseline and feed its output into an Recurrent Unit. Main Differences is that [4] feeds the bounding boxes and in addition some visual features into the recurrent unit.  
 
 \subsection{Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking}
 Ning, Zhang, Huang, He, Ren and Wang design in [5] a combination of box-level and feature-level based Video detectors. They use the YOLO network to create high-level visual features and preliminary location inferences and feed both into a recurrent unit. The architecture, called ROLO, is shown in \textbf{figure} 
@@ -406,6 +410,9 @@ region-based fully convolutional networks. In NIPS, 2016.
 \bibitem{b22} P. Dollár, C. Wojek, B. Schiele and P. Perona. Pedestrian detection: A benchmark. In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2009.
 \bibitem{b23} Bichen Wu, Forrest Iandola, Peter H. Jin, Kurt Keutzer. SequeezeDet: Unified, Small, Low Power Fully Convolutional Neural Networks for Real-Time Object Detection for Autonomous Driving. In CVPR \textit{Workshops}, 2017.
 \bibitem{b24} A. Howard, M. Zhu, B. Chen, D. Kalenichenko, W. Wang, T. Weyand, M. Andreetto, H. Adam. Mobilenets: Efficient convolutional neural networks for mobile vision applications. \textit{arXiv preprint arXiv:1704.04861}, 2017.
+\bibitem{b25} Alexander Prest, Vicky Kalogeiton, Christian Leistner, Javier Civera, Cordelia Schmid, Vittorio Ferrari. Youtube-objects dataset v2.0, 2014. URL calvin.inf.ed.ac.uk/datasets/youtube-objects-datasets. University of Edinbough (CALVIN), INRIA Grenoble (LEAR), ETH Zurich (CALVIN). 
+\bibitem{b26} Joseph Redmon, Santosh Kumar Divvala, Ross B. Girshink, Ali Farhadi. You only look once: Unified, real-time object detection, \textit{in CVPR 2016}.
+\bibitem{b27} Mark Everingham, Luc Gool, Christopher K. Williams, John Winn and Andrew Zisserman. The pascal visual object classes (voc) challenge. \textit{Int. J. Comput. Vision}, 88(2):303-338, June 2010, ISSN 0920-5691
 \end{thebibliography}
 \vspace{12pt}
 
