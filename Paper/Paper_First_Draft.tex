@@ -211,25 +211,29 @@ Tripathi, Lipton, Belongie and Nguyen test their model on the Youtube-Objects da
 
 The architecture mentioned in "Context Matters: Refining Object Detection in Video with Recurrent Neural Networks" is pretty similar to the one used in [4]. Both are using the YOLO network architecture as a baseline and feed its output into an Recurrent Unit. Main Differences is that [4] feeds the bounding boxes and in addition some visual features into the recurrent unit.  
 
-\subsection{Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking}
-Ning, Zhang, Huang, He, Ren and Wang design in [5] a combination of box-level and feature-level based Video detectors. They use the YOLO network to create high-level visual features and preliminary location inferences and feed both into a recurrent unit. The architecture, called ROLO, is shown in \textbf{figure} 
+\subsection{Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking [5]}
+Ning, Zhang, Huang, He, Ren and Wang design in \cite{b5} a combination of box-level and feature-level based Video detectors to track objects in video frames. They use the YOLO \cite{27} network to create high-level visual features and preliminary location inferences and feed both into a recurrent unit. They test their approach on the OTB-30 dataset [28] and compared it with 9 different state-of-the-art trackers. Their architecture, called ROLO, is shown in \textbf{figure}. [5-Abstract; 5-4] 
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{ROLO}
-\caption{Architecture ROLO}
+\caption{Architecture ROLO [5]. The architecture feeds feature representations made by the YOLO network as well as bounding boxes also made by the YOLO Network into a recurrent unit. The recurrent unit uses the temporal context of those inputs to finally output bounding boxes and class probabilities.}
 \end{figure}
 
-They use three phases to train their model: The pre-training phase of the convolutional layers for feature learning, the traditional YOLO training phase for object proposal and the LSTM training phase for object tracking.  \newline
+The architecture consists two main parts. The YOLO [27] networks which collects visual features and outputs also preliminary location inferences and the LSTM which is used as a tracking module [5-2]. \newline 
 
-In the pre-training phase the convolutional layers, which create the feature maps are training on ImageNet data. Afterwards the YOLO-architecture is adopted as detection module. At least they add LSTMs for tracking. The LSTMs are fed with, the feature representations from the convolutional layers, the Bounding boxes from the detection module and the output states from the LSTM in the previous time-step. For training they use the Mean Squared Error (MSE): \newline
+They use three phases to train their model: The pre-training phase of  convolutional layers for feature learning, the traditional YOLO training phase for object proposal and the LSTM training phase for object tracking. [5-3]  \newline
+
+In the pre-training phase convolutional layers, which create feature maps are pretrained on ImageNet data. Afterwards the YOLO-architecture is adopted as detection module and trained by using the traditional YOLO training phase. Last they add LSTMs for tracking. The LSTMs are fed with, the feature representations from the convolutional layers, the Bounding boxes from the detection module and the output states from the LSTM in the previous time-step. For training they use the Mean Squared Error (MSE) [5-3]: \newline
 
 $ L_{MSE} = \dfrac{1}{n} TODO $ \newline
 
-As an alternative, Ning, Zhang, Huang, He, Ren and Wang mention a Heatmap as  input for the LSTM. Therefor the prediction and the visual features are concatenated before adding them to the LSTM. This is helpful to visualize the intermediate results. \newline
+As an alternative, Ning, Zhang, Huang, He, Ren and Wang mention a Heatmap as  input for the LSTM. Therefor the prediction and the visual features are concatenated before adding them to the LSTM. This is helpful to visualize the intermediate results. [5-3.3] \newline
 
-Special to this architecture is, that LSTM does regression in two folds. There is a regression within one frame between the location inferences and the high-level features and there is also regression over the different frames of the sequence. \newline
+Special to this architecture is, that LSTM does regression in two folds. There is a regression within one frame between the location inferences and the high-level features and there is also regression over the different frames of the sequence by taking the temporal context into account [5-3.4].  \newline
 
-\includegraphics[width=\columnwidth]{otb-challenge-results} \newline
+In 2015 Wu, Lim and Yang published a comparison of different online object trackers on their one data set [28]. The best 9 architectures (STRUCK; CXT; OAB; CSK; VTD; VTS; LSK; TLD; RS) were used by Ning, Zhang, Huang, He, Ren and Wang to compare them with their own architecture. They use 30 videos with different objects (e.g.: car, human, Skater, Couple,..) out of the benchmark [28] dataset. They get the best tracking result in 13 videos and the second best in 3 videos. There is no other tracker that reaches the best results in more then 4 videos. \newline
+
+This approach combines box-level and feature-level methods and reaches good results based on the combination of spatial regression between features and location proposals and the temporal regression in the LSTM. The paper shows a potential way to combine the best of both methods (feature based and box-level approaches) which are shown in the other papers. 
 
 \section{Flow-based Object Detection}
 
@@ -413,6 +417,7 @@ region-based fully convolutional networks. In NIPS, 2016.
 \bibitem{b25} Alexander Prest, Vicky Kalogeiton, Christian Leistner, Javier Civera, Cordelia Schmid, Vittorio Ferrari. Youtube-objects dataset v2.0, 2014. URL calvin.inf.ed.ac.uk/datasets/youtube-objects-datasets. University of Edinbough (CALVIN), INRIA Grenoble (LEAR), ETH Zurich (CALVIN). 
 \bibitem{b26} Joseph Redmon, Santosh Kumar Divvala, Ross B. Girshink, Ali Farhadi. You only look once: Unified, real-time object detection, \textit{in CVPR 2016}.
 \bibitem{b27} Mark Everingham, Luc Gool, Christopher K. Williams, John Winn and Andrew Zisserman. The pascal visual object classes (voc) challenge. \textit{Int. J. Comput. Vision}, 88(2):303-338, June 2010, ISSN 0920-5691
+\bibitem{b28} Yi Wu, Jongwoo Lim, Ming-Hsuan Yang. Object tracking benchmark. Pattern Analysis and Machine Intelligence. \textit{IEEE Transaction on, 37(9):1834-1848}, 2015
 \end{thebibliography}
 \vspace{12pt}
 
