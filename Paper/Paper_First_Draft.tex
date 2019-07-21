@@ -123,10 +123,6 @@ Liu's and Zhu's final model reaches a mAP of 54.4 percent on Imagenet VID datase
 This architecture can be especially compared to the model described in "Looking Fast and Slow" because both of them are processing on a mobile device and are feature-based architectures. But "Looking Fast and Slow" differs because it does not treat every frame in the same way and proceeds with different features extractors on different frames. 
 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks \cite{b6}}
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{KB-RANN-architecture}
-\caption{Architecture Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
-\end{figure}
 
 The aim of this paper is develop a video object detector for the purpose of autonomous driving. The network developed in this paper is termed as Knowledge-Based Recurrent Attentive Neural Network (KB-RANN). \newline
 The main contributions of the authors are:
@@ -135,24 +131,27 @@ The main contributions of the authors are:
   \item A domain and intuitive knowledge module which can use the knowledge about traffic signals to produce feature maps.
   \item A model which has good ability for transfering knowledge. The authors obtained good results by evaluating the KB-RANN model on BTSD dataset \cite{b29}, which was trained on KITTI dataset \cite{b21}.
 \end{itemize}
+
 The KB-RANN, model is tested on KITTI and MS COCO17 dataset \cite{b31}, achieving 0.813 mAP and 0.578 mAP on all classes on those datasets respectively. The model performs better then several popular objection detection algorithms like Faster R-CNN \cite{b15}, RetinaNet \cite{b32} and SqueezeDet \cite{b33}.
 The authors successfully compressed and accelerated their proposed model and deployed it to their own self-developed autonomous car. \newline
 
-The authors use SqueezeNet \cite{b34} for feature extractor because SqueezeNet can provide AlexNet level of accuracy but with 50 times less parameters. Although there are better performing models like VGGNet and ResNet, but these models are computationally expensive. They make a few changes in the SqueezeNet architecture, which include changing the kernel size and also fine-tuning the backend by adding two fire modules at the end. This modified SqueezeNet architecture is given the term, SqueezeNet+. \newline
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{KB-RANN-architecture}
+\caption{Architecture of the model proposed in Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
+\end{figure}
+
+The authors use SqueezeNet\cite{b34} for feature extractor because SqueezeNet can provide AlexNet level of accuracy but with 50 times less parameters. Although there are better performing models like VGGNet\cite{b45} and ResNet\cite{b40}, but these models are computationally expensive. They make a few changes in the SqueezeNet architecture, which include changing the kernel size and also fine-tuning the backend by adding two fire modules at the end. This modified SqueezeNet architecture is termed as, SqueezeNet+. \newline
 
 Attention mechanism is used to find the saliency maps from the deep feature maps obtained from SqueezeNet. Attention module obtains the input tensor X and outputs the saliency map $\tilde{X\textsubscript{t}}$. \newline
 
 LSTM \cite{b18} is used as a memory mechanism in order to find long term dependencies between different frames and the characteristics of Attention and LSTM are exploited together by fusing them with each other, this fused module is termed as RANN. As saliency feature extraction is applied on the original deep feature maps, it is possible that some of the information is lost. Multiple RANNs are cascaded together into a chain to minimize the effect of feature information loss. Moreover, the output H\textsubscript{t} of each LSTM is concatenated with the original feature map and used as an input for the next attention module to refine the saliency feature extraction process. \newline
 
-Lasty, The authors also add a domain and intuitive knowledge module to the KB-RANN architecture. It is assumed that traffic signs detection is one of the most important aspect of autonomous driving. The major focus of attention of a driver is at the center of vision and the traffic lights are always located at a bias from that central region of peoples' gazes. With these assumptions in place, domain knowledge about traffic signals is learned from the data itself by constraining the distribution to a 2D Gaussian function and learning the mean and covariance matrices from the data. \newline
+Lasty, The authors also add a domain and intuitive knowledge module to the KB-RANN architecture. It is assumed that traffic signs detection is one of the most important aspect of autonomous driving. The major focus of attention of a driver is at the center of vision and the traffic lights are always located at a bias from that central region of peoples' gazes. With these assumptions in place, domain knowledge about traffic signals is learned from the data itself by constraining the distribution to a 2D Gaussian function and learning the mean and covariance matrices from the data. A reverse Gaussian distribution is computed from the learned Gaussian distribution. The feature maps obtained from this reverse Gaussian distribution are concatenated with the feature maps from RANN. \newline
 
 For training and evaluation of the model, the authors use the KB-RANN model and MS COCO17 dataset. They compare the results with other popular object detection models. On the KITTI dataset the KB-RANN achieves the mAP of 0.813, compared to the 0.763 of SqueezeDet, 0.702 of Faster R-CNN and 0.601 of RetinaNet. The frames-per-second (FPS) at which KB-RANN operates are higher then the compared models. In order to signify the accuracy gain from the attention mechanism and the knowledge module, authors also train and evaluate different architectures, namely KB-RCNN in which the attention mechanism is replaced with convulational layers and RANN, which does not have knowledge-based module. KB-RANN achieves better accuracy then KB-RCNN and RANN on KITTI and MS COCO17 dataset, although the FPS achieved by KB-RCNN due to its recurrent nature are higher. Lastly, a KB-RANN model with parameters trained on the KITTI dataset is also tested on BTSD dataset to demonstrate the knowledge transfer capabilities.
 
 \subsection{Looking fast and slow: memory-guided mobile video object detection \cite{b7}}
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
-\caption{Architecture Looking fast and slow: memory-guided mobile video object detection}
-\end{figure}
+
 The authors aim to, replicate the capability of a human visual system of obtaining the "gist" of a scene. Using this sparse information, and amalgamating it with the more thorough information, a human visual system can effectively detect objects in its field of vision. In light of this, the main contributions of this paper are:
 \begin{itemize}
 	\item The introduction of multiple feature extractors. Some of those feature extractors are very light-weight but can provide a "gist" of the frame, while others can provide more accurate representation of a frame but at the cost of performance.
@@ -162,10 +161,21 @@ The authors aim to, replicate the capability of a human visual system of obtaini
 \end{itemize}
 The model is evaluated on the ImageNet VID 2015 dataset \cite{b35}, with extra data from the ImageNet DET \cite{b35} and MS COCO17 datasets \cite{b31}. The model manages to achieve a mAP of 0.593 at 72.3 FPS on a Pixel3 mobile device. \newline
 
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
+\caption{The KB-RANN architecture. The frames are passed through the feature extractors to obtain, feature maps. The blue MobileNetV2 feature extractors are the light-weight ones while the red one is computationally more expensive.}
+\end{figure}
+
 Let \textit{m} be the number of feature extractors. For the implementation of this paper, the authors constraint $\textit{m}=2$, a d let f\textsubscript{1} be the feature extractor which is computationally more expensive while f\textsubscript{2} be the feature extractor which is cheaper. Both feature extractors use MobileNetV2 architecture \cite{b36}. f\textsubscript{1} uses a depth of 1.4 with $320*320$ input frames resolution while f\textsubscript{2} uses a depth of 0.35 with a lower $160*160$ input frames resolution. \newline
 
 A modified LSTM \cite{b18} is used as a memory mechanism to preserve long term dependencies. The modifications in the LSTM are responsible for making the memory mechanism faster and also better at preserving long term dependencies. For faster memory mechanism, the authors make three modifications. They introduce bottlenecking and add a skip connection between the bottleneck and the output. Lastly, the LSTM states are grouped together and convulations are applied on each group seperately and the resultant states are then concatenated together to obtain the final states. The grouped convulations provide a speed-up. In order to improve the preservation of long term dependencies by the LSTM, the LSTM states are only updated when f\textsubscript{1} is run and not the f\textsubscript{2}, as feature maps obtained from f\textsubscript{2} are not of a higher quality as of f\textsubscript{1} and this can result in loss of important state information in the LSTM. \newline
 SSD-style \cite{b17} detection is applied on refined feature maps obtained from the LSTM for classification and bounding boxes. \newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.33\columnwidth]{interleaved-policy}
+\caption{The interleaved policy, is based on the LSTM states}
+\end{figure}
 
 The interleaving policy which defines the feature extractor that should be used next is based on reinforcement learning. The state space of the reinforcement learning policy network $\pi$ consists of the LSTM states, $c\textsubscript{t}$, $h\textsubscript{t}$, as well as the differences between the states at different timestamps i.e. $c\textsubscript{t}-c\textsubscript{t-1}$, $h\textsubscript{t}-h\textsubscript{t-1}$ and lastly the action history $\eta\textsubscript{t}$. The action space has length \textit{m} and the action \textit{a} means that the feature extractor f\textsubscript{\textit{a}} should be run. \newline
 
@@ -173,11 +183,8 @@ It is observed by the authors that, despite the employment of the interleaving p
 
 As mentioned before, the authors use ImageNet VID 2015 dataset for training and evaluation, which has 30 classes in total, along with the addition of extra data from ImageNet DET and MS COCO17, but this extra data is limited to the classes contained within ImageNet VID. All results are reported, using a Pixel 3 mobile device. The results are compared with, baseline single-frame detection model i.e. MobilenetV2-SSDLite (mAP: 0.420, FPS: 14.4), LSTM-based model i.e. MobilenetV2-SSDLite+LSTM (mAP: 0.451, FPS: 14.6) and the state of the art mobile video object detection model of Zhu et. al. (mAP: 0.602, FPS: 25.6). The proposed model by authors manages to achieve a mAP of 0.593 at 72.3 FPS. The authors also perform evaluation using slight variations of the proposed architecture i.e. Non-interleaved, Interleaved only, Interleaved+Async and Interleaved+Adaptive+Async, in order to test the significance of different components of the architecture on the end results. The Interleaved+Adaptive+Async provides the most balanced end result. \cite{b37}. Although the 
 
-\subsection{Detect to Track and track to detect}
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{D&T-architecture}
-\caption{Architecture Detect to Track and track to detect}
-\end{figure}
+\subsection{Detect to Track and track to detect\cite{b8}}
+
 In this paper, the authors aim to perform, detection and tracking simultaneously using a fully convulational network by infering a "tracklet" over multiple frames.  This paper is based on the R-FCN\cite{b19} model and extends it for multiple frame and tracking. The main contributions of this paper are:
 \begin{itemize}
 	\item Finding correlation maps of two feature maps of adjacent frames. These correlation maps are used to estimate the local displacement between frames.
@@ -185,6 +192,11 @@ In this paper, the authors aim to perform, detection and tracking simultaneously
 	\item Linking the detections based on tracklets to infer long-term tubes of objects over the course of the video.
 \end{itemize}
 The proposed model is trained and evaluated on the ImageNet VID dataset \cite{b35}, consisting of 30 classes. The model achieves an overall mAP of 0.82. \newline
+
+\begin{figure}[h]
+\includegraphics[width=\columnwidth]{D&T-architecture}
+\caption{Architecture of the model proposed in Detect to Track and track to detect}
+\end{figure}
 
 The R-FCN\cite{b19} detection process consists of two stages, firstly a Region Proposal Network (RPN)\cite{b38} is used to find the candidate region of interests (ROIs) and then a ROI pooling layer\cite{b39} is used to perform classification of the regions into classes or the background. The input to the ROI pooling layer comes from a convulational layer put in place at the end of the ResNet-101 feature extractor\cite{b40} with output $x^t_{cls}$. The ROI layer outputs position sensitive feature maps and using a softmax layer these position senstive feature maps can be converted to class probablities for each ROI. On a second branch, R-FCN places a convulational layer at the end of the ResNet-101 feature extractor which outputs $x^t_{reg}$ and this ouput is again used as an input to ROI pooling layer which generates the bounding boxes. \newline
 
@@ -202,11 +214,8 @@ As mentioned above, the proposed model is trained and evaluated on the ImageNet 
 \end{figure}
 Bounding Boxes and Class probabilities are fed into the network and are refined temporally and/or spatially.
 
-\subsection{Optimizing Video Object Detection via Scale-Time Lattice}
-\begin{figure}[h]
-\includegraphics[width=\columnwidth]{scale-time-lattice}
-\caption{Architecture Optimizing Video Object Detection via Scale-Time Lattice}
-\end{figure}
+\subsection{Optimizing Video Object Detection via a Scale-Time Lattice\cite{b10}}
+
 The aim of this paper, is to propose an architecture which is balanced and flexible enough to allow prioritisation of accuracy or performance with minimal effort. The primary contributions of this paper are:
 \begin{itemize}
 	\item The Scale-Time Lattice, which provides a rich design space.
@@ -214,7 +223,19 @@ The aim of this paper, is to propose an architecture which is balanced and flexi
 	\item A novel key-frame extraction policy, which is based on the ease of detection.
 \end{itemize}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{scale-time-lattice}
+\caption{The Scale-Time Lattice has an efficient design for reaching a balance between performance and accuracy}
+\end{figure}
+
 The Scale-Time Lattice allows coarse detection, both temporally and spatially and then use temporal propagation and spatial refinement to go from coarse to fine detection. \newline
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\columnwidth]{pru}
+\caption{The Propagation and Refinement Units (PRUs) are the constituent elements which the Scale-Time Lattice is made up of}
+\end{figure}
 
 The Scale-time lattice is composed of structures which connect together to perform the temporal and spatial operations. These structures are called Propagation and Refinement Units (PRUs). PRUs work on the basis of two operators $F_\tau$ and $F_S$, and by carefully allocating resources to the two operators, a balance between the detection accuracy and the performance can be acheived. Assuming that two frames are sampled from a video at time $t$ and $t+2\tau$, both at scale $s$, the $F_\tau$ operator tries to model the movement of the bounding boxes from time $t$ to $t+\tau$ and from time $t+2\tau$ to $t+\tau$ irrespective of the scale offset between the scale $s$ and the ground truth frame scale $s+1$. The modeling of the bounding boxes offset from scale $s$ to $s+1$ is the task of the $F_S$ operator. The figure depicting the PRU gives more information on this. \newline
 
@@ -412,8 +433,6 @@ For detection quality and also for computational speed it is beneficial to work 
 \subsection{Further work}
 Todo
 
-\newpage
-
 \begin{thebibliography}{00}
 \bibitem{b1} Alexander Broad, Michael Jones, Teng-Yok Lee. Recurrent Multi-frame Single Shot Detector for Video Object Detection. 2018.
 \bibitem{b2} Mason Liu, Menglong Zhu. Mobile Video Object Detection with Temporally-Aware Feature Maps. 2018.
@@ -461,6 +480,7 @@ for dense object detection. 2017.
 \bibitem{b42} K. Kang, H. Li, J. Yan, X. Zeng, B. Yang, T. Xiao, C. Zhang, Z. Wang, R. Wang, X. Wang, and W. Ouyang. T-CNN: tubelets with convolutional neural networks for object detection from videos. 2016.
 \bibitem{b43} J. Yang, H. Shuai, Z. Yu, R. Fan, Q. Ma, Q. Liu, and J. Deng. ILSVRC2016 object detection from video: Team NUIST. 2016.
 \bibitem{b44} Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke. Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning. 2016.
+\bibitem{b45} Karen Simonyan, Andrew Zisserman. Very Deep Convolutional Networks for Large-Scale Image Recognition. 2015.
 \vspace{12pt}
 \end{thebibliography}
 \end{document}
