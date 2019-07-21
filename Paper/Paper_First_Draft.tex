@@ -42,27 +42,20 @@ TBD.
 \section{Introduction}
 
 \subsection{Image and Video Object Detection in general}
-\begin{itemize}
-	\item Image object detection history.
+\subsubsection{History of image object detection} 
+Before the advent of Deep Learning, image detection was carried out using classic Machine Learning methods like Discriminative Models i.e. Logistic Regression, Support Vector Machines etc. or Generative Models i.e. Gaussian Mixture Models etc. Bag of Visual Words (BOVW) was another technique that was used for the same purpose. The use of Deep Learning methods for image detection was restrained by two factors, first of all the dearth of large amounts of labeled data and secondly, the computational power. In 2009, Jia Deng et. al. presented a dataset named ImageNet\cite{b13} containing millions of images labeled into different categories. A breakthrough paper published in the same year by Rajat Raina\cite{b46} et. al. stipulated that using GPUs for deep learning can provide the much-needed computational power. Hence, the door to using deep learning for image classification and detection were open and the first landmark paper in this domain was published in 2012 by Alex Krizhevsky\cite{b14} et. al. \newline
+
+\subsubsection{Types of image object detectors} 
+Image object detectors can be categorized into two types, single stage and 2-stage image object detectors. A two-stage pipeline firstly generates region proposals, which are then classified and refined\cite{b17} while a single-stage method, which is often more efficient but less accurate, directly regresses on bounding boxes and classes\cite{b18}\cite{b19}. \newline
+
+\subsubsection{Why is video object detection harder?} 
 	\begin{itemize}
-		\item Bayesian methods before deep learning
-		\item ImageNet challenge and VID [15]
-		\item Deep Learning and AlexNet [16]
+		\item Large number of individual frames within the videos
+		\item The occurence of motion blur between different frames
+		\item The quality of video datasets are often not ideal
+		\item The objects to be detected can get partially occuluded
+		\item The objects can have unconventional poses
 	\end{itemize}
-	\item Single stage and 2-stage image object detectors.
-	\begin{itemize}
-		\item A two-stage pipeline firstly generates region proposals, which are then classified and refined. [17]
-		\item A single-stage method is often more efficient but less accurate. Directly regress on bounding boxes and classes. [18], [19]
-	\end{itemize}
-	\item Why is video object detection harder?
-	\begin{itemize}
-		\item Large size
-		\item Motion blur
-		\item Quality of the dataset
-		\item Partial occlusion
-		\item Unconventional Poses
-	\end{itemize}
-\end{itemize}
 
 \subsection{Recurrent Neural Networks in general}
 \subsubsection{Delimitation to non-recurrent Neural Networks} 
@@ -446,7 +439,7 @@ Todo
 \bibitem{b10} Kai Chen, Jiaqi Wang, Shuo Yang, Xingcheng Zhang, Yuanjun Xiong, Chen Change Loy, Dahua Lin. Optimizing Video Object Detection via a Scale-Time Lattice. 2018.
 \bibitem{b11} Ian Goodfellow, Yoshua Bengio, Aaron Courville. Deep Learning (Adaptive Computation and Machine Learning). 2017.
 \bibitem{b12} Alexander Broad, Michael Jones, Teng-Yok Lee. Supplementary Material for Recurrent Multi-frame Single Shot Detector for Video Object Detection. 2018.
-\bibitem{b13} Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li and Li Fei-Fei. ImageNet: A Large-Scale Hierarchical Image Database. 
+\bibitem{b13} Jia Deng, Wei Dong, Richard Socher, Li-Jia Li, Kai Li and Li Fei-Fei. ImageNet: A Large-Scale Hierarchical Image Database. 2009.
 \bibitem{b14} Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton. ImageNet Classification with Deep Convolutional Neural Networks. 2012.
 \bibitem{b15} Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks. 2016. 
 \bibitem{b16} Joseph Redmon, Ali Farhadi. YOLOv3: An Incremental Improvement.
@@ -481,6 +474,7 @@ for dense object detection. 2017.
 \bibitem{b43} J. Yang, H. Shuai, Z. Yu, R. Fan, Q. Ma, Q. Liu, and J. Deng. ILSVRC2016 object detection from video: Team NUIST. 2016.
 \bibitem{b44} Christian Szegedy, Sergey Ioffe, Vincent Vanhoucke. Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning. 2016.
 \bibitem{b45} Karen Simonyan, Andrew Zisserman. Very Deep Convolutional Networks for Large-Scale Image Recognition. 2015.
+\bibitem{b46} Rajat Raina, Anand Madhavan, Andrew Y. Ng. Large-scale Deep Unsupervised Learning using Graphics Processors. 2009.
 \vspace{12pt}
 \end{thebibliography}
 \end{document}
