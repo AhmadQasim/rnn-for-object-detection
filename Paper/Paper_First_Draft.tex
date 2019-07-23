@@ -238,10 +238,10 @@ This approach combines box-level and feature-level methods and reaches good resu
 \section{Flow-based Object Detection}
 
 \subsection{Definition}
-Another type  of architectures for Video Object Detection defined, for example in [], are architectures which use Flow-Networks to consider the temporal context. The flow network estimates the optical flow which means it projects back the location in the current frame to an earlier frame. 
+Another type  of architectures for Video Object Detection defined, for example in \cite{b3}, are architectures which use Flow-Networks to consider the temporal context. The flow network estimates the optical flow which means it projects back the location in the current frame to an earlier frame. 
 
 \subsection{Deep Feature Flow for Video Recognition}
-Zhu, Xiong, Dai, Yuan and Wei develop in [2] a way to use flow nets to detect objects in video frames. As shown in figure 10 their architecture consists of three main parts: A network to create visual features, a network to create class probabilities and bounding boxes out of feature maps, and a network which estimates the optical flow. \newline
+Zhu, Xiong, Dai, Yuan and Wei develop in [\citep{2} a way to use flow nets to detect objects in video frames. As shown in figure 10 their architecture consists of three main parts: A network to create visual features, a network to create class probabilities and bounding boxes  respectively the segmentation out of feature maps, and a network which estimates the optical flow. They tested their approach on the Cityscapes dataset with scenes for autonomous driving and ground-truth for semantic segmentation and the ImageNet \newline
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{Flow}
