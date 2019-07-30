@@ -43,7 +43,7 @@ RNN; Recurrent Neural Networks; Video Object Detection; Flow Networks; Neural Ne
 
 \subsection{Image and Video Object Detection in general}
 \subsubsection{History of image object detection} 
-Before the advent of Deep Learning, image detection was carried out using classic Machine Learning methods like Discriminative Models i.e. Logistic Regression, Support Vector Machines etc. or Generative Models i.e. Gaussian Mixture Models etc. Bag of Visual Words (BOVW) was another technique that was used for the same purpose. The use of Deep Learning methods for image detection was restrained by two factors, first of all the dearth of large amounts of labeled data and secondly, the computational power. In 2009, Jia Deng et. al. presented a dataset named ImageNet\cite{b13} containing millions of images labeled into different categories. A breakthrough paper published in the same year by Rajat Raina\cite{b46} et. al. stipulated that using GPUs for deep learning can provide the much-needed computational power. Hence, the door to using deep learning for image classification and detection were open and the first landmark paper in this domain was published in 2012 by Alex Krizhevsky\cite{b14} et. al. \newline
+Before the advent of Deep Learning, image detection was carried out using classic Machine Learning methods like Discriminative Models e.g. Logistic Regression, Support Vector Machines etc. or Generative Models e.g. Gaussian Mixture Models etc. Bag of Visual Words (BOVW) was another technique that was used for the same purpose. The use of Deep Learning methods for image detection was restrained by two factors, first of all the dearth of large amounts of labeled data and secondly, the computational power. In 2009, Jia Deng et. al. presented a dataset named ImageNet\cite{b13} containing millions of images labeled into different categories. A breakthrough paper published in the same year by Rajat Raina\cite{b46} et. al. stipulated that using GPUs for deep learning can provide the much-needed computational power. Hence, the door to using deep learning for image classification and detection were open and the first landmark paper in this domain was published in 2012 by Alex Krizhevsky\cite{b14} et. al. \newline
 
 \subsubsection{Types of image object detectors} 
 Image object detectors can be categorized into two types, single stage and 2-stage image object detectors. A two-stage pipeline firstly generates region proposals, which are then classified and refined\cite{b17} while a single-stage method, which is often more efficient but less accurate, directly regresses on bounding boxes and classes\cite{b18}\cite{b19}. \newline
@@ -115,14 +115,14 @@ This architecture can be especially compared to the model described in "Looking 
 \subsection{Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks \cite{b6}}
 
 The aim of this paper is develop a video object detector for the purpose of autonomous driving. The network developed in this paper is termed as Knowledge-Based Recurrent Attentive Neural Network (KB-RANN). \newline
-The main contributions of the authors are:
+The main contributions of the authors, Kai Yi et. al., are:
 \begin{itemize}
   \item An attention mechanism that works like human cognition. The attention mechanism can detect the salient features, which are important for the object detection problem and propagate them forward. This attention mechanism is based on previous work by Ashish Vaswani et. al. \cite{b30}. 
   \item A domain and intuitive knowledge module which can use the knowledge about traffic signals to produce feature maps.
   \item A model which has good ability for transfering knowledge. The authors obtained good results by evaluating the KB-RANN model on BTSD dataset \cite{b29}, which was trained on KITTI dataset \cite{b21}.
 \end{itemize}
 
-The KB-RANN, model is tested on KITTI and MS COCO17 dataset \cite{b31}, achieving 0.813 mAP and 0.578 mAP on all classes on those datasets respectively. The model performs better then several popular objection detection algorithms like Faster R-CNN \cite{b15}, RetinaNet \cite{b32} and SqueezeDet \cite{b33}.
+The KB-RANN model is tested on KITTI and MS COCO17 dataset \cite{b31}, achieving 0.813 mAP and 0.578 mAP repectively, on all classes of those datasets. The model performs better then several popular objection detection algorithms like Faster R-CNN \cite{b15}, RetinaNet \cite{b32} and SqueezeDet \cite{b33}.
 The authors successfully compressed and accelerated their proposed model and deployed it to their own self-developed autonomous car. \newline
 
 \begin{figure}[h]
@@ -130,7 +130,7 @@ The authors successfully compressed and accelerated their proposed model and dep
 \caption{Architecture of the model proposed in Feature Selective Small Object Detection via Knowledge-based recurrent attentive neural networks}
 \end{figure}
 
-The authors use SqueezeNet\cite{b34} for feature extractor because SqueezeNet can provide AlexNet level of accuracy but with 50 times less parameters. Although there are better performing models like VGGNet\cite{b45} and ResNet\cite{b40}, but these models are computationally expensive. They make a few changes in the SqueezeNet architecture, which include changing the kernel size and also fine-tuning the backend by adding two fire modules at the end. This modified SqueezeNet architecture is termed as, SqueezeNet+. \newline
+The authors use SqueezeNet\cite{b34} for feature extractor because SqueezeNet can provide AlexNet\cite{b14} level of accuracy but with 50 times less parameters. Although there are better performing models like VGGNet\cite{b45} and ResNet\cite{b40}, but these models are computationally expensive. They make a few changes in the SqueezeNet architecture, which include changing the kernel size and also fine-tuning the backend by adding two fire modules at the end. This modified SqueezeNet architecture is termed as, SqueezeNet+. \newline
 
 Attention mechanism is used to find the saliency maps from the deep feature maps obtained from SqueezeNet. Attention module obtains the input tensor X and outputs the saliency map $\tilde{X\textsubscript{t}}$. \newline
 
@@ -142,14 +142,14 @@ For training and evaluation of the model, the authors use the KB-RANN model and 
 
 \subsection{Looking fast and slow: memory-guided mobile video object detection \cite{b7}}
 
-The authors aim to, replicate the capability of a human visual system of obtaining the "gist" of a scene. Using this sparse information, and amalgamating it with the more thorough information, a human visual system can effectively detect objects in its field of vision. In light of this, the main contributions of this paper are:
+Mason Liu et. al. aim to, replicate the capability of a human visual system of obtaining the "gist" of a scene. Using this sparse information, and amalgamating it with the more thorough information, a human visual system can effectively detect objects in its field of vision. In light of this, the main contributions of this paper are:
 \begin{itemize}
 	\item The introduction of multiple feature extractors. Some of those feature extractors are very light-weight but can provide a "gist" of the frame, while others can provide more accurate representation of a frame but at the cost of performance.
 	\item A memory module, which can fuse the outputs of those feature extractors.
 	\item An adaptive interleaving policy which uses reinforcement learning to find to decide, which feature extractor should be executed.
 	\item The capability of executing multiple feature extractors asynchronously. So that, the light-weight feature extractors don't have to wait for the more expensive feature extractors.
 \end{itemize}
-The model is evaluated on the ImageNet VID 2015 dataset \cite{b35}, with extra data from the ImageNet DET \cite{b35} and MS COCO17 datasets \cite{b31}. The model manages to achieve a mAP of 0.593 at 72.3 FPS on a Pixel3 mobile device. \newline
+The model is evaluated on the ImageNet VID 2015 dataset \cite{b35}, which is concatenated with extra data from the ImageNet DET \cite{b35} and MS COCO17 datasets \cite{b31}. The model manages to achieve a mAP of 0.593 at 72.3 FPS on a Pixel3 mobile device. \newline
 
 \begin{figure}[h]
 \includegraphics[width=\columnwidth]{looking-fast-and-slow-architecture}
@@ -158,8 +158,8 @@ The model is evaluated on the ImageNet VID 2015 dataset \cite{b35}, with extra d
 
 Let \textit{m} be the number of feature extractors. For the implementation of this paper, the authors constraint $\textit{m}=2$, a d let f\textsubscript{1} be the feature extractor which is computationally more expensive while f\textsubscript{2} be the feature extractor which is cheaper. Both feature extractors use MobileNetV2 architecture \cite{b36}. f\textsubscript{1} uses a depth of 1.4 with $320*320$ input frames resolution while f\textsubscript{2} uses a depth of 0.35 with a lower $160*160$ input frames resolution. \newline
 
-A modified LSTM \cite{b18} is used as a memory mechanism to preserve long term dependencies. The modifications in the LSTM are responsible for making the memory mechanism faster and also better at preserving long term dependencies. For faster memory mechanism, the authors make three modifications. They introduce bottlenecking and add a skip connection between the bottleneck and the output. Lastly, the LSTM states are grouped together and convulations are applied on each group seperately and the resultant states are then concatenated together to obtain the final states. The grouped convulations provide a speed-up. In order to improve the preservation of long term dependencies by the LSTM, the LSTM states are only updated when f\textsubscript{1} is run and not the f\textsubscript{2}, as feature maps obtained from f\textsubscript{2} are not of a higher quality as of f\textsubscript{1} and this can result in loss of important state information in the LSTM. \newline
-SSD-style \cite{b17} detection is applied on refined feature maps obtained from the LSTM for classification and bounding boxes. \newline
+A modified LSTM \cite{b18} is used as a memory mechanism to preserve long term dependencies. The modifications in the LSTM are responsible for making the memory mechanism faster and also better at preserving long term dependencies. For faster memory mechanism, the authors make three modifications. They introduce bottlenecking and add a skip connection between the bottleneck and the output. Lastly, the LSTM states are grouped together and convulations are applied on each group seperately and the resultant states are then concatenated together to obtain the final states. The grouped convulations provide a speed-up. In order to improve the preservation of long term dependencies by the LSTM, the LSTM states are only updated when f\textsubscript{1} is run and not the f\textsubscript{2}, as feature maps obtained from f\textsubscript{2} are not of a higher quality compared to f\textsubscript{1} and this can result in loss of important state information in the LSTM. \newline
+SSD-style \cite{b17} detection is applied on refined feature maps obtained from the LSTM for classification and obtaining bounding boxes. \newline
 
 \begin{figure}[h]
 \centering
@@ -175,7 +175,7 @@ As mentioned before, the authors use ImageNet VID 2015 dataset for training and 
 
 \subsection{Detect to Track and track to detect\cite{b8}}
 
-In this paper, the authors aim to perform, detection and tracking simultaneously using a fully convulational network by infering a "tracklet" over multiple frames.  This paper is based on the R-FCN\cite{b19} model and extends it for multiple frame and tracking. The main contributions of this paper are:
+In this paper, Christoph Feichtenhofer, Axel Pinz and Andrew Zisserman, aim to perform, detection and tracking simultaneously using a fully convulational network by infering a "tracklet" over multiple frames.  This paper is based on the R-FCN\cite{b19} model and extends it for multiple frame and tracking. The main contributions of this paper are:
 \begin{itemize}
 	\item Finding correlation maps of two feature maps of adjacent frames. These correlation maps are used to estimate the local displacement between frames.
 	\item Using ROI-tracking layer to regress bounding boxes over multiple frames.
@@ -206,7 +206,7 @@ Bounding Boxes and Class probabilities are fed into the network and are refined 
 
 \subsection{Optimizing Video Object Detection via a Scale-Time Lattice\cite{b10}}
 
-The aim of this paper, is to propose an architecture which is balanced and flexible enough to allow prioritisation of accuracy or performance with minimal effort. The primary contributions of this paper are:
+The aim of this paper, is to propose an architecture which is balanced and flexible enough to allow prioritisation of accuracy or performance with minimal effort. The primary contributions of this paper published by Kai Chen et. al. are:
 \begin{itemize}
 	\item The Scale-Time Lattice, which provides a rich design space.
 	\item A detection framework which provides good accuracy to performance trade-off.
