@@ -32,11 +32,11 @@ a.pettirsch@outlook.de}
 \maketitle
 
 \begin{abstract}
-ToDo
+There is lot of scientific work about object detection in images. For many applications like for example autonomous driving the actual data on which classification has to be done are videos. This work compares different methods especially those which use Recurrent Neural Networks to detect objects in videos. We differ between feature-based methods, which feed feature maps of different frames into the recurrent units, box-level methods, which feed bounding boxes with class probabilities into the recurrent units and methods which use flow networks. This study indicates common outcomes of the compared methods like the benefit of including the temporal context into object detection and states conclusions and guidelines for video object detection networks. 
 \end{abstract}
 
 \begin{IEEEkeywords}
-TBD.
+RNN; Recurrent Neural Networks; Video Object Detection; Flow Networks; Neural Networks
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -59,19 +59,19 @@ Image object detectors can be categorized into two types, single stage and 2-sta
 
 \subsection{Recurrent Neural Networks in general}
 \subsubsection{Delimitation to non-recurrent Neural Networks} 
-Non-recurrent Neural Networks process on single inputs for example, a single image. Recurrent Neural Networks process on sequences of data, e.g.: multiple video frames. Recurrent Neural Network's core concept to enable the sequence processing is parameter sharing across different parts of a model. Parameter sharing can be reached by cycles in the architecture. \cite{11} \newline
+Non-recurrent Neural Networks process on single inputs for example, a single image. Recurrent Neural Networks process on sequences of data, e.g.: multiple video frames. Recurrent Neural Network's core concept to enable the sequence processing is parameter sharing across different parts of a model. Parameter sharing can be reached by cycles in the architecture. \cite{b11} \newline
 
 \subsubsection{Common Types of Recurent Neural Networks}
-Most of the papers which are described in this work use two common Recurrent Neural Network approaches. The first one are LSTMs, first mentioned in \cite{18} in 1997. The key of LSTMs are different gates (forget gate, external input gate, output gate) to control the cell state and the hidden state of the LSTM \cite{11}.  \newline
+Most of the papers which are described in this work use two common Recurrent Neural Network approaches. The first one are LSTMs, first mentioned in \cite{b18} in 1997. The key of LSTMs are different gates (forget gate, external input gate, output gate) to control the cell state and the hidden state of the LSTM \cite{b11}.  \newline
 
-The second type of Recurrent Neural Networks are Gated Recurrent Units (GRUs). The main difference to LSTMs is, that those GRUs consist out of a single gated unit which can simultaneously control the forgetting factor and decide to update the inner cell state. \cite{11} 
+The second type of Recurrent Neural Networks are Gated Recurrent Units (GRUs). The main difference to LSTMs is, that those GRUs consist out of a single gated unit which can simultaneously control the forgetting factor and decide to update the inner cell state. \cite{b11} 
 
 \section{Feature-based Video Object Detection}
 
 First, we want to introduce feature-based Video Object Detection methods. As defined, for example, in [1-2] feature-based Video Object Detection methods fuse detectors which integrate features from multiple frames into their video detection. In most papers considered in this work this integration is done by recurrent units.  
 
 \subsection{Recurrent Multi-frame Single Shot Detector for Video Object Detection [1]}
-Broad, Jones and Lee have in \cite{1} and \cite{12} the idea to design a multi-frame video object detector by inserting a fusion-layer into a classical Single Shot Detector (SSD) meta-architecture. Based on this idea they research in two main fields: On the one hand, they investigate different fusion methods and on the other hand they try several SSD meta-architectures [20-2.1.1; 20-3.6.1]. They test their approaches on the KITTI dataset \cite{21} for autonomous driving and their model improves upon a state-of-the-art SSD model by 2.7 \% mAP. Finally they evaluate their best approach on Caltech Pedestrians Dataset \cite{22} and find similar improvements of 5 \% in maP.   \newline
+Broad, Jones and Lee have in \cite{b1} and \cite{b12} the idea to design a multi-frame video object detector by inserting a fusion-layer into a classical Single Shot Detector (SSD) meta-architecture. Based on this idea they research in two main fields: On the one hand, they investigate different fusion methods and on the other hand they try several SSD meta-architectures [20-2.1.1; 20-3.6.1]. They test their approaches on the KITTI dataset \cite{b21} for autonomous driving and their model improves upon a state-of-the-art SSD model by 2.7 \% mAP. Finally they evaluate their best approach on Caltech Pedestrians Dataset \cite{b22} and find similar improvements of 5 \% in maP.   \newline
 
 SSDs in general consist of two main components. First, an so called Feature Extractor, which gets as an input an image and outputs feature-maps. The other component is an Detection head which creates bounding boxes and class probabilities out of the feature maps. [1-3] Broad, Jones and Lee have the idea to insert a fusion layer in between those two components. As fusion techniques they test simple element-wise operations (e.g.: add or max), simple concatenations of features maps and recurrent layers [1-3]. Their experiments show that the recurrent layers perform best, because they add in contrast to the other two method new parameters to learn temporal context to the network. In addition, they observe that recurrent units do not slow down the computational speed significantly (only 5 fps slower then the baseline SSD) [1-4.1]. As a recurrent unit they use GRU because they observe that the results were similar to the results when they use LSTMs but the GRUs are faster to train [1-3.1.1]. Their final architecture is shown in Figure 1. 
 
@@ -80,7 +80,7 @@ SSDs in general consist of two main components. First, an so called Feature Extr
 \caption{Architecture: Recurent Multi-frame single shot detector [1]. The Feature Extractor generates feature maps for four frames and feeds those feature maps into the GRUs. The Detection Head uses the final feature maps which are created by the GRU with respect to the temporal context to create Bounding Boxes and Class probabilities}
 \end{figure}
 
-In addition Broad, Jones and Lee test different types of SSDs as a baseline for their architecture. For all baseline SSDs the mAP was higher in comparison to the non-recurrent models. The mAP increase by 1.4 to 4.4 percent on KITTI dataset.  The best mAP is made with SqueezeDet+ \cite{23} as a baseline SSD network [1-4.2].  \newline
+In addition Broad, Jones and Lee test different types of SSDs as a baseline for their architecture. For all baseline SSDs the mAP was higher in comparison to the non-recurrent models. The mAP increase by 1.4 to 4.4 percent on KITTI dataset.  The best mAP is made with SqueezeDet+ \cite{b23} as a baseline SSD network [1-4.2].  \newline
 
 Finally Broad, Jones and Lee use the Caltech Pedestrians dataset to expolore the effect of the number of prior frames and the frame-rate. They compare the single-frame SSD model, with the RMf-SSD using the prior frames and the RMf-SSD model using the frames t-2, t-4 and t-6. The improvement was 3 percentage points higher by using the frames t-2, t-4 and t-6 in comparison to use the prior 3 frames [1-4.4]. \newline  
 
@@ -91,9 +91,9 @@ Overall Broad, Jones and Lee show three main things. First they show that includ
 This architecture is comparable to the architectures described in 2-B and 2-E. Main differences are that 2-B uses more then one recurrent unit and 2-E different feature extractors for different frames. But all of them feed feature maps of different frames into recurrent units. 
  
 \subsection{Mobile Video Object Detection with Temporally Aware Feature Maps [2]}
-Liu and Zhu have in \cite{2} the goal to design a video object detection architecture, which can run real-time (15 fps) on low-powered mobile and embedded devices. The key of their method is to combine convolutional layers with convolutional LSTMs. They investigate on the benefit from adding an LSTM into the baseline SSD, different types of Recurrent Layers (LSTM, GRU and bottleneck LSTMs), different dimensions of their bottleneck LSTMs and different LSTM placement strategies (Single LSTM placement and multiple LSTM placement). They test their model on Imagenet VID 2015 dataset and reached a mAP of 54.4 \% while performing on 15 fps.  \newline
+Liu and Zhu have in \cite{b2} the goal to design a video object detection architecture, which can run real-time (15 fps) on low-powered mobile and embedded devices. The key of their method is to combine convolutional layers with convolutional LSTMs. They investigate on the benefit from adding an LSTM into the baseline SSD, different types of Recurrent Layers (LSTM, GRU and bottleneck LSTMs), different dimensions of their bottleneck LSTMs and different LSTM placement strategies (Single LSTM placement and multiple LSTM placement). They test their model on Imagenet VID 2015 dataset \cite{b35} and reached a mAP of 54.4 \% while performing on 15 fps.  \newline
 
-In the beginning they simply add one LSTM to their baseline SSDs architecture - MobileNet \cite{24}. They observe that adding the LSTM improves the mAP in comparison to their baseline SSD architecture. Moreover, they investigate that the greatest improve is by adding the LSTM after the 13th convolutional Layer of the SSD. [2-4.2] \newline
+In the beginning they simply add one LSTM to their baseline SSDs architecture - MobileNet \cite{b24}. They observe that adding the LSTM improves the mAP in comparison to their baseline SSD architecture. Moreover, they investigate that the greatest improve is by adding the LSTM after the 13th convolutional Layer of the SSD. [2-4.2] \newline
 
 Afterwards, they compare LSTMs, GRUs and Bottleneck LSTMs by placing them after the 13th convolutional layer. Bottleneck-LSTMs have been designed by Liu and Zhu to increase the efficiency of LSTMs. They use ReLU as activation function and feed Bottleneck feature map with less input channel then the original feature map into the LST. They come to the conclusion that Bottleneck-LSTMs are more effective the LSTMs and in the case of a convolutional kernel greater 1x1 even more effective than GRUs while attaining comparable perfomance. [2-3.4; 2-4.2]\newline
 
@@ -103,12 +103,12 @@ As shown in Fig. 2 the final model uses LSTMs after all feature maps, because Li
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{Liu_Zhu}
-\caption{Architecture Mobile Video Object Detection with temporally aware feature maps \cite{2}. First 13 Convolutional Layeer create Feature Maps. Those Feature Maps are fed into the Bottleneck-LSTMs (faster LSTMs). Afterwards Convolutional-Layer create new Feature Maps and feed them again into Bottleneck-LSTMs.}
+\caption{Architecture Mobile Video Object Detection with temporally aware feature maps \cite{b2}. First 13 Convolutional Layeer create Feature Maps. Those Feature Maps are fed into the Bottleneck-LSTMs (faster LSTMs). Afterwards Convolutional-Layer create new Feature Maps and feed them again into Bottleneck-LSTMs.}
 \end{figure}
 
 On the training strategy and the loss function Liu and Zhu do not provide any information. \newline
 
-Liu and Zhu confirm the observation from \cite{1} that adding temporal context information with the help recurrent units improves the detection quality of the baseline SSDs. Moreover they show that architectures using recurrent units can still perform in real-time (15 fps) even on mobile devices. In comparison to the Mobilnet-SSD model they improve the mAP by 4.1 percentage and perform faster on Pixel 2 Phone. Overall they reach an 54.4 \% on Imagenet VID. \newline
+Liu and Zhu confirm the observation from \cite{b1} that adding temporal context information with the help recurrent units improves the detection quality of the baseline SSDs. Moreover they show that architectures using recurrent units can still perform in real-time (15 fps) even on mobile devices. In comparison to the Mobilnet-SSD model they improve the mAP by 4.1 percentage and perform faster on Pixel 2 Phone. Overall they reach an 54.4 \% on Imagenet VID. \newline
 
 This architecture can be especially compared to the model described in "Looking Fast and Slow" because both of them are processing on a mobile device and are feature-based architectures. But "Looking Fast and Slow" differs because it does not treat every frame in the same way and proceeds with different features extractors on different frames. 
 
@@ -236,7 +236,7 @@ The proposed model has an mAP of 0.79 at 60 FPS on the ImageNet VID dataset. \ne
 \subsection{Context Matters: Refining Object Detection in Video with Recurrent Neural Networks \cite{b4}}
 In \cite{b4} Tripathi's, Lipton's, Belongie's and Nguyen's architecture consists two parts: A pseudo-labeler, which assigns labels to all video frames and a recurrent unit which refines those pseudo-labels by using the contextual information. Moreover, they describe a training strategy for their architecture and compare their approach to other models on the YouTube-Objects dataset (v2.0), which consists of the ten categories airplane, bird, boat, car, cow, dog, horse, mbike, train. Their model reaches an mAP of 68.73 percent which improves the strongest image-based baseline for Youtube-Video Objects dataset of 7.1\% [4-Abstract; 25]. \newline
 
-The final architecture can be found in \textbf{Fig 2}. Tripathi, Lipton and Belongie first train a pretrained YOLO object detection network \cite{b20} as a  pseudo-labeler on the YouTube-Video Dataset. As specified in YOLO  they minimize the weighted squared detection loss and optimize classification and localization error simultaneously [4-3]. 
+The final architecture can be found in \textbf{Fig 10}. Tripathi, Lipton and Belongie first train a pretrained YOLO object detection network \cite{b20} as a  pseudo-labeler on the YouTube-Video Dataset. As specified in YOLO  they minimize the weighted squared detection loss and optimize classification and localization error simultaneously [4-3]. 
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{ContextMatters}
@@ -287,7 +287,7 @@ This approach combines box-level and feature-level methods and reaches good resu
 Another type  of architectures for Video Object Detection defined, for example in \cite{b3}, are architectures which use Flow-Networks to consider the temporal context. The flow network estimates the optical flow which means it projects back the location in the current frame to an earlier frame. 
 
 \subsection{Deep Feature Flow for Video Recognition \cite{2}}
-Zhu, Xiong, Dai, Yuan and Wei develop in \cite{b2} a way to use flow nets to detect objects in video frames. As shown in figure 10 their architecture consists of three main parts: A network to create visual features, a network to create class probabilities and bounding boxes respectively the segmentation out of feature maps, and a network which estimates the optical flow. They tested their approach on the Cityscapes dataset with scenes for autonomous driving and ground-truth for semantic segmentation and the ImageNet VID dataset with ground truth for object detection.
+Zhu, Xiong, Dai, Yuan and Wei develop in \cite{b2} a way to use flow nets to detect objects in video frames. As shown in figure 10 their architecture consists of three main parts: A network to create visual features, a network to create class probabilities and bounding boxes respectively the segmentation out of feature maps, and a network which estimates the optical flow. They tested their approach on the Cityscapes dataset with scenes for autonomous driving and ground-truth for semantic segmentation and the ImageNet VID dataset \cite{b35} with ground truth for object detection.
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{Flow}
