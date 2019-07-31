@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  31 JUL 2019 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  31 JUL 2019 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,9 +559,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
  []
 
 
-LaTeX Warning: Citation `20' on page 1 undefined on input line 74.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
@@ -570,18 +567,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
 
 ]
-
-LaTeX Warning: Citation `1' on page 2 undefined on input line 76.
-
-
-LaTeX Warning: Citation `1' on page 2 undefined on input line 76.
-
-
-LaTeX Warning: Citation `1' on page 2 undefined on input line 76.
-
-
-LaTeX Warning: Citation `1' on page 2 undefined on input line 76.
-
 <images/RMFSSD.png, id=11, 578.16pt x 246.6816pt>
 File: images/RMFSSD.png Graphic file (type png)
 <use images/RMFSSD.png>
@@ -651,9 +636,6 @@ Underfull \hbox (badness 2213) in paragraph at lines 111--112
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 2057) in paragraph at lines 125--127
@@ -877,22 +859,6 @@ Underfull \hbox (badness 1533) in paragraph at lines 237--238
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 237--238
-\OT1/ptm/m/n/10 in-for-ma-tion. More-over, they de-scribe a train-ing strat-egy
-
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 237--238
-\OT1/ptm/m/n/10 con-sists of the ten cat-e-gories air-plane, bird, boat, car,
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 237--238
-\OT1/ptm/m/n/10 cow, dog, horse, mbike, train. Their model reaches an
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
@@ -941,6 +907,9 @@ Package pdftex.def Info: images/ROLO.png  used on input line 264.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
+LaTeX Warning: Citation `26' on page 7 undefined on input line 268.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
@@ -953,22 +922,6 @@ Underfull \hbox (badness 2617) in paragraph at lines 270--271
 
 Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
- []
-
-
-Underfull \hbox (badness 2837) in paragraph at lines 272--273
-\OT1/ptm/m/n/10 the YOLO-architecture is adopted as de-tec-tion mod-ule
- []
-
-
-Underfull \hbox (badness 1924) in paragraph at lines 272--273
-\OT1/ptm/m/n/10 with, the fea-ture rep-re-sen-ta-tions from the con-vo-lu-tiona
-l
- []
-
-
-Underfull \hbox (badness 1881) in paragraph at lines 272--273
-\OT1/ptm/m/n/10 lay-ers, the Bound-ing boxes from the de-tec-tion mod-ule
  []
 
 
@@ -996,6 +949,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
+
+LaTeX Warning: Citation `2' on page 8 undefined on input line 289.
+
 <images/Flow.png, id=57, 464.4552pt x 125.268pt>
 File: images/Flow.png Graphic file (type png)
 <use images/Flow.png>
@@ -1010,6 +966,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--298
 Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
+
+
+LaTeX Warning: Citation `b58' on page 8 undefined on input line 301.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 301--302
@@ -1187,7 +1146,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 334--355
  []
 
 
-Underfull \vbox (badness 6542) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 356--357
@@ -1198,6 +1157,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 356--357
 Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
+
+
+LaTeX Warning: Citation `3' on page 9 undefined on input line 360.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 360--361
@@ -1318,13 +1280,16 @@ Before submitting the final camera ready copy, remember to:
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 5612 strings out of 492616
- 85763 string characters out of 6129481
- 165310 words of memory out of 5000000
- 9448 multiletter control sequences out of 15000+600000
- 39477 words of font info for 75 fonts, out of 8000000 for 9000
+ 5614 strings out of 492616
+ 85773 string characters out of 6129481
+ 165306 words of memory out of 5000000
+ 9449 multiletter control sequences out of 15000+600000
+ 40573 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,8n,39p,1097b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1339,7 +1304,7 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on Paper_First_Draft.pdf (11 pages, 653021 bytes).
+Output written on Paper_First_Draft.pdf (11 pages, 653370 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
