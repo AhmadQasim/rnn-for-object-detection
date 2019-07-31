@@ -294,7 +294,7 @@ Zhu, Xiong, Dai, Yuan and Wei develop in \cite{b2} a way to use flow nets to det
 \caption{Architecture Deep Feature Flow for Video Recognition \cite{b3}. The feature Network $N_{feat}$ extracts visual features for the key frames. The $N_{task}$ networks uses visual features to create Bounding boxes and Class probabilities. For non-key frame images, the flow networks F estimates the feature maps based on in a image sequence.} 
 \end{figure}
 
-The paper differs between key frames and other frames. The network to create visual features $ N_{feat} $ only processes on key frames. It is a fully convolutional network, which takes as an input the image and outputs a feature maps. As a feature network they use a pretrained version of ResNet. [3-3, 3-4] \newline
+The paper differs between key frames and other frames. The network to create visual features $ N_{feat} $ only processes on key frames. It is a fully convolutional network, which takes as an input the image and outputs a feature maps. As a feature network they use a pretrained version of ResNet \cite{40}. [3-3, 3-4] \newline
 
 The second network $ N_{task} $ does the recognition task over the feature maps. It performs on every frame.  Zhu, Xiong, Dai, Yuan and Wei use an R-FCN \cite{b19} network for the recognition task. [3-3, 3-4]  \newline
 
