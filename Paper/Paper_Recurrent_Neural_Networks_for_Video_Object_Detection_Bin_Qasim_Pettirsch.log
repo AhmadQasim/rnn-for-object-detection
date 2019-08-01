@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  1 AUG 2019 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.6.28)  1 AUG 2019 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,8 +434,8 @@ ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \c@caption@flags=\count111
 \c@ContinuedFloat=\count112
 )
-No file Paper_Recurrent_Neural_Networks_for_Video_Object_Detection_Bin_Qasim_Pe
-ttirsch.aux.
+(./Paper_Recurrent_Neural_Networks_for_Video_Object_Detection_Bin_Qasim_Pettirs
+ch.aux)
 \openout1 = `Paper_Recurrent_Neural_Networks_for_Video_Object_Detection_Bin_Qas
 im_Pettirsch.aux'.
 
@@ -453,7 +453,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 14.
@@ -526,28 +526,9 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-
-LaTeX Warning: Citation `b13' on page 1 undefined on input line 46.
-
-
-LaTeX Warning: Citation `b46' on page 1 undefined on input line 46.
-
-
-LaTeX Warning: Citation `b14' on page 1 undefined on input line 46.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
-
-
-LaTeX Warning: Citation `b17' on page 1 undefined on input line 49.
-
-
-LaTeX Warning: Citation `b18' on page 1 undefined on input line 49.
-
-
-LaTeX Warning: Citation `b19' on page 1 undefined on input line 49.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 49--50
@@ -563,10 +544,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `b11' on page 1 undefined on input line 62.
-
-
 Underfull \hbox (badness 4686) in paragraph at lines 62--63
  \OT1/ptm/m/it/10 1) De-lim-i-ta-tion to non-recurrent Neu-ral Net-works: [][]
  []
@@ -582,30 +559,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
  []
 
 
-LaTeX Warning: Citation `b18' on page 1 undefined on input line 65.
-
-
-LaTeX Warning: Citation `b11' on page 1 undefined on input line 65.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
-
-
-LaTeX Warning: Citation `b11' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Citation `b1' on page 1 undefined on input line 74.
-
-
-LaTeX Warning: Citation `b12' on page 1 undefined on input line 74.
-
-
-LaTeX Warning: Citation `b21' on page 1 undefined on input line 74.
-
-
-LaTeX Warning: Citation `b22' on page 1 undefined on input line 74.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
@@ -621,10 +577,6 @@ File: images/RMFSSD.png Graphic file (type png)
 <use images/RMFSSD.png>
 Package pdftex.def Info: images/RMFSSD.png  used on input line 79.
 (pdftex.def)             Requested size: 252.0pt x 107.52017pt.
-
-
-LaTeX Warning: Citation `b23' on page 2 undefined on input line 83.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
@@ -646,23 +598,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
  []
 
 
-LaTeX Warning: Citation `b2' on page 2 undefined on input line 94.
-
-
-LaTeX Warning: Citation `b35' on page 2 undefined on input line 94.
-
-
-Underfull \hbox (badness 1515) in paragraph at lines 94--95
-\OT1/ptm/m/n/10 strate-gies (Sin-gle LSTM place-ment and mul-ti-ple LSTM
+Underfull \hbox (badness 1874) in paragraph at lines 94--95
+\OT1/ptm/m/n/10 Lay-ers (LSTM, GRU and bot-tle-neck LSTMs), dif-fer-ent
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
-
-
-LaTeX Warning: Citation `b24' on page 2 undefined on input line 96.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
@@ -685,23 +628,13 @@ File: images/Liu_Zhu.png Graphic file (type png)
 Package pdftex.def Info: images/Liu_Zhu.png  used on input line 105.
 (pdftex.def)             Requested size: 252.0pt x 68.81873pt.
 
-LaTeX Warning: Citation `b2' on page 3 undefined on input line 106.
-
-
-LaTeX Warning: Citation `b2' on page 3 undefined on input line 106.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-LaTeX Warning: Citation `b1' on page 3 undefined on input line 111.
-
-
 Underfull \hbox (badness 2213) in paragraph at lines 111--112
-[]\OT1/ptm/m/n/10 Liu and Zhu con-firm the ob-ser-va-tion from [\OT1/ptm/b/n/10
- ?\OT1/ptm/m/n/10 ] that
+[]\OT1/ptm/m/n/10 Liu and Zhu con-firm the ob-ser-va-tion from [1] that
  []
 
 
@@ -710,28 +643,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
  []
 
 
-LaTeX Warning: Citation `b6' on page 3 undefined on input line 115.
+Underfull \hbox (badness 2057) in paragraph at lines 125--127
+[]\OT1/ptm/m/n/10 The KB-RANN model is tested on KITTI and MS
+ []
 
 
-LaTeX Warning: Citation `b30' on page 3 undefined on input line 120.
-
-
-LaTeX Warning: Citation `b29' on page 3 undefined on input line 122.
-
-
-LaTeX Warning: Citation `b21' on page 3 undefined on input line 122.
-
-
-LaTeX Warning: Citation `b31' on page 3 undefined on input line 125.
-
-
-LaTeX Warning: Citation `b15' on page 3 undefined on input line 125.
-
-
-LaTeX Warning: Citation `b32' on page 3 undefined on input line 125.
-
-
-LaTeX Warning: Citation `b33' on page 3 undefined on input line 125.
+Underfull \hbox (badness 1571) in paragraph at lines 125--127
+\OT1/ptm/m/n/10 per-forms bet-ter then sev-eral pop-u-lar ob-jec-tion de-tec-ti
+on
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 125--127
@@ -745,21 +665,8 @@ Package pdftex.def Info: images/KB-RANN-architecture.png  used on input line 12
 9.
 (pdftex.def)             Requested size: 252.0pt x 94.03203pt.
 
-LaTeX Warning: Citation `b34' on page 3 undefined on input line 133.
-
-
-LaTeX Warning: Citation `b14' on page 3 undefined on input line 133.
-
-
-LaTeX Warning: Citation `b45' on page 3 undefined on input line 133.
-
-
-LaTeX Warning: Citation `b40' on page 3 undefined on input line 133.
-
-
-Underfull \hbox (badness 2582) in paragraph at lines 133--134
-\OT1/ptm/m/n/10 be-cause SqueezeNet can pro-vide AlexNet [\OT1/ptm/b/n/10 ?\OT1
-/ptm/m/n/10 ] level of
+Underfull \hbox (badness 1521) in paragraph at lines 133--134
+\OT1/ptm/m/n/10 be-cause SqueezeNet can pro-vide AlexNet [14] level of
  []
 
 
@@ -772,15 +679,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-
-LaTeX Warning: Citation `b18' on page 3 undefined on input line 137.
-
-
+[3 <./images/Liu_Zhu.png> <./images/KB-RANN-architecture.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-[3 <./images/Liu_Zhu.png> <./images/KB-RANN-architecture.png>]
+
 Underfull \hbox (badness 1997) in paragraph at lines 139--140
 []\OT1/ptm/m/n/10 Lasty, The au-thors also add a do-main and in-tu-itive
  []
@@ -796,16 +700,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--140
  []
 
 
-LaTeX Warning: Citation `b7' on page 4 undefined on input line 143.
-
-
-LaTeX Warning: Citation `b35' on page 4 undefined on input line 152.
-
-
-LaTeX Warning: Citation `b35' on page 4 undefined on input line 152.
-
-
-LaTeX Warning: Citation `b31' on page 4 undefined on input line 152.
+Underfull \hbox (badness 2600) in paragraph at lines 152--153
+\OT1/ptm/m/n/10 [35], which is con-cate-nated with ex-tra data from the
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
@@ -820,9 +717,6 @@ Package pdftex.def Info: images/looking-fast-and-slow-architecture.png  used on
  input line 155.
 (pdftex.def)             Requested size: 252.0pt x 101.54277pt.
 
-LaTeX Warning: Citation `b36' on page 4 undefined on input line 159.
-
-
 Underfull \hbox (badness 1584) in paragraph at lines 159--160
 []\OT1/ptm/m/n/10 Let \OT1/ptm/m/it/10 m \OT1/ptm/m/n/10 be the num-ber of fea-
 ture ex-trac-tors. For the
@@ -832,12 +726,6 @@ ture ex-trac-tors. For the
 Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
-
-
-LaTeX Warning: Citation `b18' on page 4 undefined on input line 161.
-
-
-LaTeX Warning: Citation `b17' on page 4 undefined on input line 162.
 
 
 Underfull \hbox (badness 1708) in paragraph at lines 161--163
@@ -867,20 +755,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
  []
 
 
-LaTeX Warning: Citation `b37' on page 5 undefined on input line 174.
-
-
-LaTeX Warning: Citation `b8' on page 5 undefined on input line 176.
-
-
-LaTeX Warning: Citation `b19' on page 5 undefined on input line 178.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-LaTeX Warning: Citation `b35' on page 5 undefined on input line 184.
+Underfull \hbox (badness 1496) in paragraph at lines 184--185
+\OT1/ptm/m/n/10 VID dataset [35], con-sist-ing of 30 classes. The model
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 184--185
@@ -893,18 +770,6 @@ File: images/D&T-architecture.png Graphic file (type png)
 Package pdftex.def Info: images/D&T-architecture.png  used on input line 187.
 (pdftex.def)             Requested size: 252.0pt x 105.33418pt.
 
-LaTeX Warning: Citation `b19' on page 5 undefined on input line 191.
-
-
-LaTeX Warning: Citation `b38' on page 5 undefined on input line 191.
-
-
-LaTeX Warning: Citation `b39' on page 5 undefined on input line 191.
-
-
-LaTeX Warning: Citation `b40' on page 5 undefined on input line 191.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
@@ -915,22 +780,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--194
  []
 
 [5 <./images/interleaved-policy.png> <./images/D&T-architecture.png>]
-
-LaTeX Warning: Citation `b41' on page 6 undefined on input line 195.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
-
-
-LaTeX Warning: Citation `b42' on page 6 undefined on input line 197.
-
-
-LaTeX Warning: Citation `b43' on page 6 undefined on input line 197.
-
-
-LaTeX Warning: Citation `b44' on page 6 undefined on input line 197.
 
 <images/box-level-basic.png, id=41, 931.48pt x 275.0275pt>
 File: images/box-level-basic.png Graphic file (type png)
@@ -938,18 +790,8 @@ File: images/box-level-basic.png Graphic file (type png)
 Package pdftex.def Info: images/box-level-basic.png  used on input line 202.
 (pdftex.def)             Requested size: 252.0pt x 74.40529pt.
 
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 207.
-
-
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 208.
-
-
-LaTeX Warning: Citation `b25' on page 6 undefined on input line 208.
-
-
 Underfull \hbox (badness 3199) in paragraph at lines 208--209
-[]\OT1/ptm/m/n/10 In [\OT1/ptm/b/n/10 ?\OT1/ptm/m/n/10 ] Tri-pathi's, Lip-ton's
-, Be-longie's and Nguyen's
+[]\OT1/ptm/m/n/10 In [4] Tri-pathi's, Lip-ton's, Be-longie's and Nguyen's
  []
 
 
@@ -962,20 +804,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
-
-LaTeX Warning: Citation `b20' on page 6 undefined on input line 210.
-
 <images/ContextMatters.png, id=42, 539.616pt x 200.4288pt>
 File: images/ContextMatters.png Graphic file (type png)
 <use images/ContextMatters.png>
 Package pdftex.def Info: images/ContextMatters.png  used on input line 213.
 (pdftex.def)             Requested size: 252.0pt x 93.59906pt.
-
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 214.
-
-
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 214.
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
@@ -1006,16 +839,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
-
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 229.
-
-
-LaTeX Warning: Citation `b4' on page 6 undefined on input line 229.
-
 [6 <./images/box-level-basic.png> <./images/ContextMatters.png>]
-
-LaTeX Warning: Citation `b10' on page 7 undefined on input line 231.
-
 <images/scale-time-lattice.png, id=48, 819.06pt x 557.08125pt>
 File: images/scale-time-lattice.png Graphic file (type png)
 <use images/scale-time-lattice.png>
@@ -1076,29 +900,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
-
-LaTeX Warning: Citation `b5' on page 7 undefined on input line 260.
-
-
-LaTeX Warning: Citation `b5' on page 7 undefined on input line 261.
-
-
-LaTeX Warning: Citation `b26' on page 7 undefined on input line 261.
-
-
-LaTeX Warning: Citation `b28' on page 7 undefined on input line 261.
-
 <images/ROLO.png, id=50, 540.5796pt x 211.5102pt>
 File: images/ROLO.png Graphic file (type png)
 <use images/ROLO.png>
 Package pdftex.def Info: images/ROLO.png  used on input line 264.
 (pdftex.def)             Requested size: 252.0pt x 98.5965pt.
-
-LaTeX Warning: Citation `b5' on page 7 undefined on input line 265.
-
-
-LaTeX Warning: Citation `b5' on page 7 undefined on input line 265.
-
 
 LaTeX Warning: Citation `26' on page 7 undefined on input line 268.
 
@@ -1138,42 +944,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--279
  []
 
 
-LaTeX Warning: Citation `b28' on page 8 undefined on input line 280.
-
-
-LaTeX Warning: Citation `b28' on page 8 undefined on input line 280.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
-
-
-LaTeX Warning: Citation `b3' on page 8 undefined on input line 287.
-
-
-LaTeX Warning: Citation `b3' on page 8 undefined on input line 289.
-
-
-LaTeX Warning: Citation `b2' on page 8 undefined on input line 290.
-
-
-LaTeX Warning: Citation `b56' on page 8 undefined on input line 290.
-
-
-LaTeX Warning: Citation `b35' on page 8 undefined on input line 290.
 
 <images/Flow.png, id=58, 464.4552pt x 125.268pt>
 File: images/Flow.png Graphic file (type png)
 <use images/Flow.png>
 Package pdftex.def Info: images/Flow.png  used on input line 293.
 (pdftex.def)             Requested size: 252.0pt x 67.96674pt.
-
-LaTeX Warning: Citation `b3' on page 8 undefined on input line 294.
-
-
-LaTeX Warning: Citation `b3' on page 8 undefined on input line 294.
-
 
 LaTeX Warning: Citation `40' on page 8 undefined on input line 297.
 
@@ -1183,15 +962,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--298
  []
 
 
-LaTeX Warning: Citation `b19' on page 8 undefined on input line 299.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
-
-
-LaTeX Warning: Citation `b57' on page 8 undefined on input line 301.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 301--302
@@ -1224,9 +997,6 @@ Overfull \hbox (1.6698pt too wide) in paragraph at lines 317--317
  []
 
 
-LaTeX Warning: Citation `b1' on page 9 undefined on input line 319.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 319--319
 []\OT1/ptm/m/n/10 Nvidia
  []
@@ -1235,9 +1005,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 319--319
 Underfull \hbox (badness 10000) in paragraph at lines 319--320
 []\OT1/ptm/m/n/10 Feature-
  []
-
-
-LaTeX Warning: Citation `b6' on page 9 undefined on input line 321.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 321--321
@@ -1260,12 +1027,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--324
  []
 
 
-LaTeX Warning: Citation `b1' on page 9 undefined on input line 325.
-
-
-LaTeX Warning: Citation `b6' on page 9 undefined on input line 325.
-
-
 Underfull \hbox (badness 2529) in paragraph at lines 325--326
 \OT1/ptm/m/n/10 Small Ob-ject De-tec-tion via Knowledge-based Re-cur-rent
  []
@@ -1274,12 +1035,6 @@ Underfull \hbox (badness 2529) in paragraph at lines 325--326
 Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
-
-
-LaTeX Warning: Citation `b6' on page 9 undefined on input line 327.
-
-
-LaTeX Warning: Citation `b1' on page 9 undefined on input line 327.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 327--328
@@ -1292,9 +1047,6 @@ Overfull \hbox (1.6698pt too wide) in paragraph at lines 336--336
  []
 
 
-LaTeX Warning: Citation `b8' on page 9 undefined on input line 338.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 338--338
 []\OT1/ptm/m/n/10 Nvidia
  []
@@ -1303,9 +1055,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 338--338
 Underfull \hbox (badness 10000) in paragraph at lines 338--339
 []\OT1/ptm/m/n/10 Feature-
  []
-
-
-LaTeX Warning: Citation `b8' on page 9 undefined on input line 340.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 340--340
@@ -1318,9 +1067,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 340--341
  []
 
 
-LaTeX Warning: Citation `b10' on page 9 undefined on input line 342.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 342--342
 []\OT1/ptm/m/n/10 Scale-Time
  []
@@ -1331,9 +1077,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--342
  []
 
 
-LaTeX Warning: Citation `b10' on page 9 undefined on input line 344.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 344--344
 []\OT1/ptm/m/n/10 Scale-Time
  []
@@ -1342,9 +1085,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 344--344
 Underfull \hbox (badness 10000) in paragraph at lines 344--344
 []\OT1/ptm/m/n/10 Nvidia
  []
-
-
-LaTeX Warning: Citation `b3' on page 9 undefined on input line 346.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 346--346
@@ -1352,15 +1092,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 346--346
  []
 
 
-LaTeX Warning: Citation `b3' on page 9 undefined on input line 348.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 348--348
 []\OT1/ptm/m/n/10 DeepFeature
  []
-
-
-LaTeX Warning: Citation `b7' on page 9 undefined on input line 350.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 350--350
@@ -1371,9 +1105,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--350
 Underfull \hbox (badness 10000) in paragraph at lines 350--351
 []\OT1/ptm/m/n/10 Feature-
  []
-
-
-LaTeX Warning: Citation `b2' on page 9 undefined on input line 352.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 352--352
@@ -1437,9 +1168,6 @@ Overfull \hbox (1.6698pt too wide) in paragraph at lines 369--369
  []
 
 
-LaTeX Warning: Citation `b6' on page 9 undefined on input line 371.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 371--371
 []\OT1/ptm/m/n/10 Feature
  []
@@ -1460,9 +1188,6 @@ Overfull \hbox (1.6698pt too wide) in paragraph at lines 380--380
  []
 
 
-LaTeX Warning: Citation `b4' on page 10 undefined on input line 382.
-
-
 Overfull \hbox (2.5pt too wide) in paragraph at lines 382--382
 []\OT1/ptm/m/n/10 68.73| 
  []
@@ -1481,9 +1206,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--387
 Overfull \hbox (1.65955pt too wide) in paragraph at lines 392--392
 []\OT1/ptm/m/n/10 Success
  []
-
-
-LaTeX Warning: Citation `b5' on page 10 undefined on input line 394.
 
 
 Underfull \hbox (badness 1831) in paragraph at lines 394--394
@@ -1521,18 +1243,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--408
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 421--422
+Underfull \hbox (badness 3168) in paragraph at lines 419--420
 []\OT1/ptm/m/n/8 Mason Liu, Men-g-long Zhu, Marie White, Yinx-iao Li, Dmitry
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 440--441
+Underfull \hbox (badness 3713) in paragraph at lines 438--439
 \OT1/ptm/m/n/8 Cordelia Schmid, Vit-to-rio Fer-rari. Youtube-objects dataset v2
 .0,
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for TS1+ptm on input line 447.
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 445.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -1556,18 +1278,15 @@ ch.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 5611 strings out of 492616
- 86152 string characters out of 6129481
- 165087 words of memory out of 5000000
+ 5612 strings out of 492616
+ 86311 string characters out of 6129481
+ 165306 words of memory out of 5000000
  9448 multiletter control sequences out of 15000+600000
- 40573 words of font info for 76 fonts, out of 8000000 for 9000
+ 39477 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,39p,1168b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,39p,1158b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
@@ -1581,7 +1300,7 @@ texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist
 pe1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/ti
 mes/utmri8a.pfb>
 Output written on Paper_Recurrent_Neural_Networks_for_Video_Object_Detection_Bi
-n_Qasim_Pettirsch.pdf (11 pages, 654421 bytes).
+n_Qasim_Pettirsch.pdf (11 pages, 653169 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
