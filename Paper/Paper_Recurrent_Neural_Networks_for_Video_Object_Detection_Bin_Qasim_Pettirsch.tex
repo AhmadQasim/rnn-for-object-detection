@@ -275,14 +275,14 @@ Here, N is the number of bounding boxes in the batch, while $\Delta_{F_{T}}$ and
 [5-5.2] The proposed model has an mAP of 0.79 at 60 FPS on the ImageNet VID dataset. \newline
 
 \subsection{Spatially Supervised Recurrent Convolutional Neural Networks for Visual Object Tracking \cite{b5}}
-Ning, Zhang, Huang, He, Ren and Wang design in \cite{b5} a combination of box-level and feature-level based Video detectors. They use the YOLO \cite{b26} network to create high-level visual features and preliminary location inferences and feed both into a recurrent unit. They test their approach on the OTB-30 dataset \cite{b28} and compared it with 9 different state-of-the-art trackers and outperform all of them. Their architecture, called ROLO, is shown in figure 11. [5-Abstract; 5-4] 
+Ning, Zhang, Huang, He, Ren and Wang design in \cite{b5} a combination of box-level and feature-level based Video detectors. They use the YOLO\cite{b26} network to create high-level visual features and preliminary location inferences and feed both into a recurrent unit. They test their approach on the OTB-30 dataset \cite{b28} and compared it with 9 different state-of-the-art trackers and outperform all of them. Their architecture, called ROLO, is shown in figure 11. [5-Abstract; 5-4] 
 
 \begin{figure} [h]
 \includegraphics[width=\columnwidth]{ROLO}
 \caption{Architecture ROLO \cite{b5}. The architecture feeds feature representations made by the YOLO network as well as bounding boxes also made by the YOLO Network into a recurrent unit. The recurrent unit uses the temporal context of those inputs to finally output bounding boxes and class probabilities.}
 \end{figure}
 
-The architecture consists two main parts. The YOLO \cite{26} networks which collects visual features and outputs also preliminary location inferences and the LSTM which is used as a tracking module [5-2]. \newline 
+The architecture consists two main parts. The YOLO\cite{b26} networks which collects visual features and outputs also preliminary location inferences and the LSTM which is used as a tracking module [5-2]. \newline 
 
 They use three phases to train their model: The pre-training phase of  convolutional layers for feature learning, the traditional YOLO training phase for object proposal and the LSTM training phase for object tracking. [5-3]  \newline
 
@@ -311,7 +311,7 @@ Zhu, Xiong, Dai, Yuan and Wei develop in \cite{b2} a way to use flow nets to det
 \caption{Architecture Deep Feature Flow for Video Recognition \cite{b3}. The feature Network $N_{feat}$ extracts visual features for the key frames. The $N_{task}$ networks uses visual features to create Bounding boxes and Class probabilities. For non-key frame images, the flow networks F estimates the feature maps based on in a image sequence.} 
 \end{figure}
 
-The paper differs between key frames and other frames. The network to create visual features $ N_{feat} $ only processes on key frames. It is a fully convolutional network, which takes as an input the image and outputs a feature maps. As a feature network they use a pretrained version of ResNet \cite{40}. [3-3, 3-4] \newline
+The paper differs between key frames and other frames. The network to create visual features $ N_{feat} $ only processes on key frames. It is a fully convolutional network, which takes as an input the image and outputs a feature maps. As a feature network they use a pretrained version of ResNet \cite{b40}. [3-3, 3-4] \newline
 
 The second network $ N_{task} $ does the recognition task over the feature maps. It performs on every frame.  Zhu, Xiong, Dai, Yuan and Wei use an R-FCN \cite{b19} network for the recognition task. [3-3, 3-4]  \newline
 
@@ -374,7 +374,7 @@ As seen in Table 2 both "Detect to Track and Track to Detect" and "Optimizing Vi
 
 In addition to the advantage of performing on multiple frames in parallel "Optimizing Video Detection with spatial-time lattice" uses not only the temporal context. In addition to the temporal context, this approach takes also different scales into consideration. This is a possible further reason for the good results. \newline
 
-The Flow-based approach \cite{3} has comparatively bad results on ImageNet. We only evaluated one flow-based paper, but the comparatively bad performance could be an evidence that flow-based approaches' benefit in comparison to recurrent approaches does not exist or is very small. \newline
+The Flow-based approach \cite{b3} has comparatively bad results on ImageNet. We only evaluated one flow-based paper, but the comparatively bad performance could be an evidence that flow-based approaches' benefit in comparison to recurrent approaches does not exist or is very small. \newline
 
 "Looking Fast and Slow: Memory-Guided Mobile Video Object Detection" and "Mobile Video Object Detection with Temporally-Aware Feature Maps" cannot be compared to the other 3 approaches because they are running on mobile devices, which have pretty less computational power than the GPUs which are used by the other papers.  
 
@@ -457,10 +457,10 @@ region-based fully convolutional networks. In NIPS, 2016.
 \bibitem{b20} Jonathan Huang, Vivek Rathod, Chen Sun, Menglong Zhu, Anoop Korattikara, Alireza Fathi, Ian Fischer, Zbigniew Wojna, Yang Song, Sergio Guadarrama, et al.. Speed/accuracy trade-offs for modern convolutional object detectors . In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR}, 2017.
 \bibitem{b21} Andreas Geiger, Philip Lenz and Raquel Urtasun. Are we ready for autonomous driving? The kitti vision benchmark suite. In \textit{Conference on Computer Vision and Patern Recognition (CVPR)}, 2012.
 \bibitem{b22} P. Dollár, C. Wojek, B. Schiele and P. Perona. Pedestrian detection: A benchmark. In \textit{Proceedings of the Conference on Computer Vision and Pattern Recognition (CVPR)}, June 2009.
-\bibitem{b23} Bichen Wu, Forrest Iandola, Peter H. Jin, Kurt Keutzer. SequeezeDet: Unified, Small, Low Power Fully Convolutional Neural Networks for Real-Time Object Detection for Autonomous Driving. In CVPR \textit{Workshops}, 2017.
+\bibitem{b23} Bichen Wu, Forrest Iandola, Peter H. Jin, Kurt Keutzer. SequeezeDet: Unified, Small, Low Power Fully Convolutional Neural Networks for Real-Time Object Detection for Autonomous Driving. In \textit{CVPR Workshops}, 2017.
 \bibitem{b24} A. Howard, M. Zhu, B. Chen, D. Kalenichenko, W. Wang, T. Weyand, M. Andreetto, H. Adam. Mobilenets: Efficient convolutional neural networks for mobile vision applications. \textit{arXiv preprint arXiv:1704.04861}, 2017.
 \bibitem{b25} Alexander Prest, Vicky Kalogeiton, Christian Leistner, Javier Civera, Cordelia Schmid, Vittorio Ferrari. Youtube-objects dataset v2.0, 2014. URL calvin.inf.ed.ac.uk/datasets/youtube-objects-datasets. University of Edinbough (CALVIN), INRIA Grenoble (LEAR), ETH Zurich (CALVIN). 
-\bibitem{b26} Joseph Redmon, Santosh Kumar Divvala, Ross B. Girshink, Ali Farhadi. You only look once: Unified, real-time object detection, \textit{in CVPR 2016}.
+\bibitem{b26} Joseph Redmon, Santosh Kumar Divvala, Ross B. Girshink, Ali Farhadi. You only look once: Unified, real-time object detection, in \textit{CVPR}. 2016.
 \bibitem{b27} Mark Everingham, Luc Gool, Christopher K. Williams, John Winn and Andrew Zisserman. The pascal visual object classes (voc) challenge. \textit{Int. J. Comput. Vision}, 88(2):303-338, June 2010, ISSN 0920-5691
 \bibitem{b28} Yi Wu, Jongwoo Lim, Ming-Hsuan Yang. Object tracking benchmark. Pattern Analysis and Machine Intelligence. \textit{IEEE Transaction on, 37(9):1834-1848}, 2015
 \bibitem{b29} Radu Timofte, Karel Zimmermann, Luc Van Gool. Multi-view traffic sign detection, recognition, and 3D localisation. 2009.
